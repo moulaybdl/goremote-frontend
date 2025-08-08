@@ -123,6 +123,10 @@
   .bg-glow {
     background-color: var(--color-glow);
   }
+  .bg-glow-10 {
+    background-color: color-mix(in srgb, var(--color-glow) 10%, transparent);
+  }
+
   .text-glow {
     color: var(--color-glow);
   }
@@ -430,7 +434,7 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: var(--color-background);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
@@ -453,14 +457,14 @@
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar: var(--bg-surface-dark);
+  --sidebar-foreground: var(--color-text-secondary);
+  --sidebar-primary: oklch(65.578% 0.15342 242.818);
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar-border: var(--border-dark);
+  --sidebar-ring: oklch(62.793% 0.25768 29.223);
 }
 
 @layer base {
