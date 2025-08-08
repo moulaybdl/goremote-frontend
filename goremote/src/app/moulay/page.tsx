@@ -1,4 +1,5 @@
 import Button2 from "@/components/buttons/button2";
+import Button3 from "@/components/buttons/button3";
 import SimpleTag from "@/components/tags/simpleTag";
 
 export default function Moulay() {
@@ -25,7 +26,10 @@ export default function Moulay() {
       {/* Buttons */}
       <div className="flex flex-col gap-5 mt-5">
         <div className="font-lexend-medium">Buttons</div>
-        <Button2 title="Company" />
+        <div className="flex gap-4">
+          <Button2 title="Company" />
+          <Button3 title="Freelancer" />
+        </div>
       </div>
     </div>
   );
