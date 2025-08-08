@@ -30,13 +30,13 @@ import { usePathname } from "next/navigation";
 // Menu items.
 const items = [
   {
-    title: "Home",
-    url: "/home",
+    title: "Moulay",
+    url: "/moulay",
     icon: Home,
   },
   {
-    title: "Inbox",
-    url: "#",
+    title: "Chaima",
+    url: "/chaima",
     icon: Inbox,
   },
   {
