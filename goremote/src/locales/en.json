@@ -1,0 +1,128 @@
+{
+  "aboutUs": {
+    "title": "About Us",
+    "description": "We are a passionate team dedicated to creating innovative solutions that make a difference. Our expertise spans across multiple domains, allowing us to deliver comprehensive services that meet our clients' diverse needs. With years of experience and a commitment to excellence, we strive to build lasting partnerships and drive meaningful results."
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "common": {
+    "welcome": "Welcome",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "language": "Language"
+  },
+  "features": {
+    "web": {
+      "title": "Web Development",
+      "description": "Modern web applications",
+      "technologies": ["React", "Next.js", "TypeScript"]
+    },
+    "mobile": {
+      "title": "Mobile Development",
+      "description": "Cross-platform mobile apps"
+    }
+  },
+  "testimonials": [
+    {
+      "name": "John Doe",
+      "role": "CEO",
+      "quote": "Amazing work!"
+    }
+  ],
+  "contact": {
+    "form": {
+      "fields": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message"
+      },
+      "validation": {
+        "required": "This field is required",
+        "invalidEmail": "Please enter a valid email"
+      }
+    }
+  },
+
+  "weekDaysAbbr": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  "agency": {
+    "title": "K2A Agency",
+    "description": "Our main agency welcomes you in a modern and professional setting.",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "availability": "Available 24/7, 7/7",
+    "responseTime": "Response within 24h",
+    "businessHours": "Opening Hours",
+    "weekdays": "Monday - Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "contactUs": "Contact Us"
+  },
+  "services": {
+    "availability24_7": {
+      "title": "24/7 Availability",
+      "description": "Reserve and pick up your vehicle at any time, according to your needs"
+    },
+    "explore": "Explore",
+    "getInfo": "Get Info",
+    "fastReliable": "Fast & Reliable Service",
+    "professionalSupport": "Professional Support",
+    "competitivePricing": "Competitive Pricing",
+    "verifiedQuality": "Verified Quality"
+  },
+  "vehicles": {
+    "startingFrom": "Starting from",
+    "perDay": "/day",
+    "viewMore": "View More",
+    "book": "Book",
+    "automatic": "Automatic",
+    "manual": "Manual",
+    "hybrid": "Hybrid",
+    "notAvailable": "Not Available",
+    "available": "Available",
+    "featured": "Featured"
+  },
+  "reviews": {
+    "client": "CLIENT",
+    "rating": "rating"
+  },
+  "admin": {
+    "welcome": "Weclome to the Admin space"
+  },
+  "dashboard": {
+    "navbar": {
+      "dashboard": {
+        "title": "Dashboard",
+        "subtitle": "Manage your account and bookings",
+        "connection_state": "Online"
+      },
+      "vehicles": {
+        "title": "Vehicles",
+        "subtitle": "Manage your account and bookings"
+      }
+    },
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "Vehicles": "Vehicles",
+      "Clients": "Clients",
+      "Content": "Content",
+      "Feedback": "Feedback",
+      "logout": "Logout"
+    },
+    "stat_card": {
+      "title": "Véhicules disponibles"
+    },
+    "recent_activity": {
+      "title": "Recent Activity",
+      "confirmed_reservation": "Confirmed Reservation"
+    },
+    "rental_type": {
+      "title": "Rental type",
+      "subtitle": "Proportion of each rental type"
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "aboutUs": {
+    "title": "À Propos de Nous",
+    "description": "Nous sommes une équipe passionnée dédiée à la création de solutions innovantes qui font la différence. Notre expertise s'étend sur plusieurs domaines, nous permettant de fournir des services complets qui répondent aux besoins diversifiés de nos clients. Avec des années d'expérience et un engagement envers l'excellence, nous nous efforçons de construire des partenariats durables et de générer des résultats significatifs."
+  },
+  "navigation": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "common": {
+    "welcome": "Bienvenue",
+    "learnMore": "En Savoir Plus",
+    "getStarted": "Commencer",
+    "language": "Langue"
+  },
+  "features": {
+    "web": {
+      "title": "Développement Web",
+      "description": "Applications web modernes",
+      "technologies": ["React", "Next.js", "TypeScript"]
+    },
+    "mobile": {
+      "title": "Développement Mobile",
+      "description": "Applications mobiles multiplateformes"
+    }
+  },
+  "testimonials": [
+    {
+      "name": "Jean Dupont",
+      "role": "PDG",
+      "quote": "Travail fantastique!"
+    }
+  ],
+  "contact": {
+    "form": {
+      "fields": {
+        "name": "Nom",
+        "email": "Email",
+        "message": "Message"
+      },
+      "validation": {
+        "required": "Ce champ est requis",
+        "invalidEmail": "Veuillez entrer un email valide"
+      }
+    }
+  },
+
+  "weekDaysAbbr": ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
+
+  "agency": {
+    "title": "Agence K2A",
+    "description": "Notre agence principale vous accueille dans un cadre moderne et professionnel.",
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "email": "Email",
+    "availability": "Disponible 24h/24, 7j/7",
+    "responseTime": "Réponse sous 24h",
+    "businessHours": "Horaires d'ouverture",
+    "weekdays": "Lundi - Vendredi",
+    "saturday": "Samedi",
+    "sunday": "Dimanche",
+    "contactUs": "Nous Contacter"
+  },
+  "services": {
+    "availability24_7": {
+      "title": "Disponibilité 24/7",
+      "description": "Réservez et récupérez votre véhicule à tout moment, selon vos besoins"
+    },
+    "explore": "Explorer",
+    "getInfo": "Plus d'Infos",
+    "fastReliable": "Service Rapide et Fiable",
+    "professionalSupport": "Support Professionnel",
+    "competitivePricing": "Prix Compétitifs",
+    "verifiedQuality": "Qualité Vérifiée"
+  },
+  "vehicles": {
+    "startingFrom": "À partir de",
+    "perDay": "/jour",
+    "viewMore": "Voir Plus",
+    "book": "Réserver",
+    "automatic": "Automatique",
+    "manual": "Manuelle",
+    "hybrid": "Hybride",
+    "notAvailable": "Non Disponible",
+    "available": "Disponible",
+    "featured": "En Vedette"
+  },
+  "reviews": {
+    "client": "CLIENT",
+    "rating": "note"
+  },
+  "admin": {
+    "welcome": "Bienvenue dans l’espace administrateur"
+  },
+  "dashboard": {
+    "navbar": {
+      "dashboard": {
+        "title": "Tableau de bord",
+        "subtitle": "Gérez votre compte et vos réservations",
+        "connection_state": "En ligne"
+      },
+      "vehicles": {
+        "title": "Véhicules",
+        "subtitle": "Gérez votre compte et vos réservations"
+      }
+    },
+    "sidebar": {
+      "dashboard": "Tableau de Bord",
+      "Vehicles": "Véhicules",
+      "Clients": "Clients",
+      "Content": "Contenu",
+      "Feedback": "Feedback",
+      "logout": "Déconnexion"
+    },
+    "stat_card": {
+      "title": "Available Vehicles"
+    },
+    "recent_activity": {
+      "title": "Activité Récente",
+      "confirmed_reservation": "Réservation Confirmée"
+    },
+    "rental_type": {
+      "title": "Type de location",
+      "subtitle": "Proportion de chaque type de location"
+    }
+  }
+}

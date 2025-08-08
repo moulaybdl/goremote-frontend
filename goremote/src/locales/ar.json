@@ -1,0 +1,126 @@
+{
+  "aboutUs": {
+    "title": "من نحن",
+    "description": "نحن فريق متحمس مكرس لإنشاء حلول مبتكرة تحدث فرقاً. تمتد خبرتنا عبر مجالات متعددة، مما يتيح لنا تقديم خدمات شاملة تلبي الاحتياجات المتنوعة لعملائنا. مع سنوات من الخبرة والالتزام بالتميز، نسعى لبناء شراكات دائمة وتحقيق نتائج ذات معنى."
+  },
+  "navigation": {
+    "home": "الرئيسية",
+    "about": "من نحن",
+    "services": "الخدمات",
+    "contact": "اتصل بنا"
+  },
+  "common": {
+    "welcome": "مرحباً",
+    "learnMore": "اقرأ المزيد",
+    "getStarted": "ابدأ الآن",
+    "language": "اللغة"
+  },
+  "features": {
+    "web": {
+      "title": "تطوير المواقع",
+      "description": "تطبيقات ويب حديثة",
+      "technologies": ["React", "Next.js", "TypeScript"]
+    },
+    "mobile": {
+      "title": "تطوير التطبيقات",
+      "description": "تطبيقات محمولة متعددة المنصات"
+    }
+  },
+  "testimonials": [
+    {
+      "name": "أحمد محمد",
+      "role": "الرئيس التنفيذي",
+      "quote": "عمل رائع!"
+    }
+  ],
+  "contact": {
+    "form": {
+      "fields": {
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "message": "الرسالة"
+      },
+      "validation": {
+        "required": "هذا الحقل مطلوب",
+        "invalidEmail": "يرجى إدخال بريد إلكتروني صحيح"
+      }
+    }
+  },
+  "agency": {
+    "title": "وكالة K2A",
+    "description": "وكالتنا الرئيسية ترحب بكم في إطار عصري ومهني.",
+    "address": "العنوان",
+    "phone": "الهاتف",
+    "email": "البريد الإلكتروني",
+    "availability": "متاح 24/7، 7/7",
+    "responseTime": "الرد خلال 24 ساعة",
+    "businessHours": "ساعات العمل",
+    "weekdays": "الاثنين - الجمعة",
+    "saturday": "السبت",
+    "sunday": "الأحد",
+    "contactUs": "اتصل بنا"
+  },
+  "services": {
+    "availability24_7": {
+      "title": "متاح 24/7",
+      "description": "احجز واستلم سيارتك في أي وقت، حسب احتياجاتك"
+    },
+    "explore": "استكشف",
+    "getInfo": "المزيد من المعلومات",
+    "fastReliable": "خدمة سريعة وموثوقة",
+    "professionalSupport": "دعم مهني",
+    "competitivePricing": "أسعار تنافسية",
+    "verifiedQuality": "جودة مؤكدة"
+  },
+  "vehicles": {
+    "startingFrom": "ابتداء من",
+    "perDay": "/يوم",
+    "viewMore": "عرض المزيد",
+    "book": "احجز",
+    "automatic": "أوتوماتيك",
+    "manual": "يدوي",
+    "hybrid": "هجين",
+    "notAvailable": "غير متاح",
+    "available": "متاح",
+    "featured": "مميز"
+  },
+  "reviews": {
+    "client": "عميل",
+    "rating": "تقييم"
+  },
+  "admin": {
+    "welcome": "مرحبا بك في فضاء المشرف"
+  },
+  "dashboard": {
+    "navbar": {
+      "dashboard": {
+        "title": "لوحة التحكم",
+        "subtitle": "إدارة حسابك وحجوزاتك",
+        "connection_state": "متصل"
+      },
+       "vehicles": {
+        "title": "المركبات",
+        "subtitle": "إدارة حسابك وحجوزاتك"
+       }
+    },
+    "sidebar": {
+      "dashboard": "لوحة القيادة",
+      "Vehicles": "المركبات",
+      "Clients": "العملاء",
+      "Content": "المحتوى",
+      "Feedback": "الملاحظات",
+      "logout": "تسجيل الخروج"
+    },
+    "stat_card": {
+      "title": "المركبات المتاحة"
+    },
+    "recent_activity": {
+      "title": "النشاطات مؤخرا",
+      "confirmed_reservation": "حجز مؤكد"
+    },
+    "rental_type": {
+      "title": "نوع الإيجار",
+      "subtitle": "نسبة كل نوع من أنواع الإيجار"
+    }
+  }
+}
