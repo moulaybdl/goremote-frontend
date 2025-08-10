@@ -1,6 +1,7 @@
 import Button2 from "@/components/buttons/button2";
 import Button3 from "@/components/buttons/button3";
 import SimpleTag from "@/components/tags/simpleTag";
+import { ThemeToggle } from "@/components/ui/theme-switcher";
 
 export default function Moulay() {
   return (
@@ -29,6 +30,7 @@ export default function Moulay() {
         <div className="flex gap-4">
           <Button2 title="Company" />
           <Button3 title="Freelancer" />
+          <ThemeToggle/>
         </div>
       </div>
     </div>
