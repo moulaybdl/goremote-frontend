@@ -14,7 +14,7 @@ export default function CoreFunctionalityCard({
           {/* image */}
           <Image src={image} alt={"feature"} className="grow self-center" />
           {/* description */}
-          <div className="flex flex-col gap-2 ">
+          <div className="flex flex-col gap-2">
             <div className="text-2xl font-lexend-medium text-secondary">
               {title}
             </div>

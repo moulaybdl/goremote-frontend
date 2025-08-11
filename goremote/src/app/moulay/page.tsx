@@ -17,6 +17,7 @@ import InputField1 from "@/components/input/inputField1";
 import InputField2 from "@/components/input/inputField2";
 import InputField3 from "@/components/input/inputField3";
 import InputIcon from "@/components/input/inputIcon";
+import InfoCard from "@/components/announcement/infoCard";
 
 export default function Moulay() {
   return (
@@ -100,6 +101,25 @@ export default function Moulay() {
           <InputField3 />
           <span>-</span>
           <InputIcon />
+        </div>
+      </div>
+      {/* services and announcement components */}
+      <div className="flex flex-col gap-5 mt-15">
+        <div className="font-lexend-medium">
+          services and announcement components
+        </div>
+        <div className="flex flex-row gap-5">
+          <InfoCard
+            name={"Moulay Bouabelli"}
+            tag={"Web developer"}
+            availability={false}
+            title={"Landing page for your website "}
+            description={
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore... "
+            }
+            delivery_time={"5-7 days"}
+            price={""}
+          />
         </div>
       </div>
     </div>
