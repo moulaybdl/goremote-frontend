@@ -9,16 +9,18 @@ export default function CoreFunctionalityCard({
 }: CoreFunctionalityCardProps) {
   return (
     <div className="max-w-[492px] w-full h-[522px] rounded-[19px] bg-surface-light flex justify-center items-center relative">
-      <div className="w-full h-full rounded-[19px] flex flex-col p-6">
-        {/* image */}
-        <Image src={image} alt={"feature"} className="grow self-center" />
-        {/* description */}
-        <div className="flex flex-col gap-2 ">
-          <div className="text-2xl font-lexend-medium text-secondary">
-            {title}
-          </div>
-          <div className="text-base font-lexend-medium text-white">
-            {description}
+      <div className={`w-full h-full core-functionality-card-gradient-2-${direction} rounded-[19px]`}>
+        <div className="w-full h-full rounded-[19px] flex flex-col p-6">
+          {/* image */}
+          <Image src={image} alt={"feature"} className="grow self-center" />
+          {/* description */}
+          <div className="flex flex-col gap-2 ">
+            <div className="text-2xl font-lexend-medium text-secondary">
+              {title}
+            </div>
+            <div className="text-base font-lexend-medium text-white">
+              {description}
+            </div>
           </div>
         </div>
       </div>

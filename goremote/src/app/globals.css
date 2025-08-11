@@ -332,10 +332,19 @@
     );
   }
 
-  .core-functionality-card-gradient-2 {
+  .core-functionality-card-gradient-2-right {
     background: #000000;
     background: linear-gradient(
       147deg,
+      rgba(0, 0, 0, 0) 37%,
+      rgba(0, 255, 224, 0.05) 100%
+    );
+  }
+
+    .core-functionality-card-gradient-2-left {
+    background: #000000;
+    background: linear-gradient(
+      187deg,
       rgba(0, 0, 0, 0) 37%,
       rgba(0, 255, 224, 0.05) 100%
     );
