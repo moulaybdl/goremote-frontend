@@ -21,6 +21,7 @@ import InfoCard from "@/components/announcement/infoCard";
 import DropDown1 from "@/components/input/dropDown1";
 import FreelancerProfileCard from "@/components/cards/announcements/freelancerCard";
 import RatingCard from "@/components/cards/announcements/ratingCard";
+import CompanyCard from "@/components/cards/announcements/companyCard";
 
 export default function Moulay() {
   return (
@@ -134,7 +135,16 @@ export default function Moulay() {
             availability={true}
             experience_level={"Expert"}
           />
-          <RatingCard />
+          <div className="flex flex-col gap-5">
+            <RatingCard />
+            <CompanyCard
+              name={"Goremote"}
+              label={"Startup"}
+              Verified={true}
+              email={"company@email.com"}
+              phone_number={"+213 0 00 00 00 00"}
+            />
+          </div>
         </div>
       </div>
     </div>

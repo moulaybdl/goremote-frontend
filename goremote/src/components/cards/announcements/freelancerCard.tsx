@@ -8,7 +8,7 @@ export default function FreelancerProfileCard({
   experience_level,
 }: FreelancerProfileCardProps) {
   return (
-    <div className="w-96 rounded-3xl bg-surface-dark flex flex-col justify-center items-center relative">
+    <div className="w-96 h-fit rounded-3xl bg-surface-dark flex flex-col justify-center items-center relative">
       <div className="freelancer-card-gradient absolute w-[101%] h-[101%] -z-1 rounded-3xl"></div>
       <div className="bg-[var(--border-dark)] w-full h-56 rounded-3xl flex justify-center items-center relative">
         <div className="w-36 h-36 aspect-square rounded-full absolute top-[70%] bg-[var(--color-link)]"></div>
@@ -33,7 +33,6 @@ export default function FreelancerProfileCard({
       <div className="w-full px-14 py-4">
         <Button3 title={"View Profile"} radius="rounded-full" />
       </div>
-      {/* buttons */}
     </div>
   );
 }
