@@ -341,12 +341,39 @@
     );
   }
 
-    .core-functionality-card-gradient-2-left {
+  .core-functionality-card-gradient-2-left {
     background: #000000;
     background: linear-gradient(
       187deg,
       rgba(0, 0, 0, 0) 37%,
       rgba(0, 255, 224, 0.05) 100%
+    );
+  }
+
+  .service-card-gradient {
+    background: #14161a;
+    background: linear-gradient(
+      345deg,
+      rgba(20, 22, 26, 1) 0%,
+      rgba(72, 82, 96, 0.11) 100%
+    );
+  }
+
+  .service-card-border-gradient {
+    background: #22272c;
+    background: linear-gradient(
+      165deg,
+      rgba(34, 39, 44, 1) 0%,
+      rgba(72, 82, 96, 0.09) 100%
+    );
+  }
+
+  .freelancer-card-gradient {
+    background: #22272c;
+    background: linear-gradient(
+      1deg,
+      rgba(34, 39, 44, 1) 100%,
+      rgba(72, 82, 96, 1) 100%
     );
   }
 

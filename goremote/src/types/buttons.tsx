@@ -1,3 +1,4 @@
 export type ButtonProps = {
-  title: string
-}
+  title: string;
+  radius?: string;
+};

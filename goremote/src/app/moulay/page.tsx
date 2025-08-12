@@ -1,8 +1,8 @@
 import Button2 from "@/components/buttons/button2";
-import Button3 from "@/components/buttons/primaryButton";
+import Button3 from "@/components/buttons/buttons3";
 import PrimaryButton from "@/components/buttons/primaryButton";
 import Button4 from "@/components/buttons/button4";
-import SimpleTag from "@/components/tags/simpleTag";
+import { SimpleTag, AvailabilityTag } from "@/components/tags/simpleTag";
 import { ThemeToggle } from "@/components/ui/theme-switcher";
 import LearnMoreButton from "@/components/buttons/LearnMoreButton";
 import CoreFunctionalityCard from "@/components/cards/landingPage/coreFunctionalityCard";
@@ -18,6 +18,9 @@ import InputField2 from "@/components/input/inputField2";
 import InputField3 from "@/components/input/inputField3";
 import InputIcon from "@/components/input/inputIcon";
 import InfoCard from "@/components/announcement/infoCard";
+import DropDown1 from "@/components/input/dropDown1";
+import FreelancerProfileCard from "@/components/cards/announcements/freelancerCard";
+import RatingCard from "@/components/cards/announcements/ratingCard";
 
 export default function Moulay() {
   return (
@@ -93,7 +96,7 @@ export default function Moulay() {
       {/* input fields */}
       <div className="flex flex-col gap-4 mt-15">
         <div className="font-lexend-medium">Input fields</div>
-        <div className="flex flex-row justify-center items-center gap-4 w-fit">
+        <div className="flex flex-col justify-start items-start gap-4 w-fit">
           <InputField1 />
           <span>-</span>
           <InputField2 />
@@ -101,6 +104,12 @@ export default function Moulay() {
           <InputField3 />
           <span>-</span>
           <InputIcon />
+          <span>-</span>
+          <DropDown1
+            trigger={"filter"}
+            label={"filte name"}
+            items={["option 1", "option 2", "option 3"]}
+          />
         </div>
       </div>
       {/* services and announcement components */}
@@ -120,6 +129,12 @@ export default function Moulay() {
             delivery_time={"5-7 days"}
             price={""}
           />
+          <FreelancerProfileCard
+            firstname={"Moulay"}
+            availability={true}
+            experience_level={"Expert"}
+          />
+          <RatingCard />
         </div>
       </div>
     </div>
