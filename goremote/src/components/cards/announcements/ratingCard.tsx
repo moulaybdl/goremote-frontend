@@ -3,7 +3,7 @@ import { Star } from "lucide-react";
 
 export default function RatingCard() {
   return (
-    <div className="w-96 h-fit flex flex-col gap-4 rounded-3xl bg-surface-dark border border-[var(--color-link)} p-4">
+    <div className="w-96 h-fit flex flex-col gap-4 rounded-3xl bg-surface-dark border border-[var(--color-link)} p-6">
       <div className="flex flex-col gap-2">
         <span className="text-font-medium text-base text-white">
           Expected Delivery time:

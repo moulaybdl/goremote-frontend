@@ -8,7 +8,7 @@ export default function CoreFunctionalityCard({
   image,
 }: CoreFunctionalityCardProps) {
   return (
-    <div className="max-w-[492px] w-full h-[522px] rounded-[19px] bg-surface-light flex justify-center items-center relative">
+    <div className="max-w-[492px] w-full h-[522px] rounded-[19px] bg-surface-light flex justify-center items-center elevation-2 relative">
       <div className={`w-full h-full core-functionality-card-gradient-2-${direction} rounded-[19px]`}>
         <div className="w-full h-full rounded-[19px] flex flex-col p-6">
           {/* image */}

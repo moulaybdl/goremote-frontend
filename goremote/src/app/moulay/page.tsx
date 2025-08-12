@@ -1,3 +1,5 @@
+"use client";
+
 import Button2 from "@/components/buttons/button2";
 import Button3 from "@/components/buttons/buttons3";
 import PrimaryButton from "@/components/buttons/primaryButton";
@@ -7,6 +9,7 @@ import { ThemeToggle } from "@/components/ui/theme-switcher";
 import LearnMoreButton from "@/components/buttons/LearnMoreButton";
 import CoreFunctionalityCard from "@/components/cards/landingPage/coreFunctionalityCard";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 // images:
 import workspacePNG from "@/components/cards/landingPage/img/workspace.svg";
@@ -22,13 +25,15 @@ import DropDown1 from "@/components/input/dropDown1";
 import FreelancerProfileCard from "@/components/cards/announcements/freelancerCard";
 import RatingCard from "@/components/cards/announcements/ratingCard";
 import CompanyCard from "@/components/cards/announcements/companyCard";
+import LoginCard from "@/components/auth/loginCard";
+import RoleCard from "@/components/auth/RoleCard";
 
 export default function Moulay() {
   return (
     <div className="w-full h-full flex-col justify-start mt-10">
       {/* tags */}
       <div className="flex flex-col gap-5 ">
-        <span className="font-lexend-medium">General tags</span>
+        <span className="font-lexend-medium text-2xl">General tags</span>
         <div className={`flex flex-row gap-2 `}>
           <SimpleTag title={"Expert"} color="bg-[#00FF5D]" />
           <SimpleTag title={"Intermediate"} color="bg-[#F6A93A]" />
@@ -37,7 +42,7 @@ export default function Moulay() {
       </div>
       {/* company type */}
       <div className="flex flex-col gap-5 mt-5">
-        <span className="font-lexend-medium">Company type</span>
+        <span className="font-lexend-medium text-2xl">Company type</span>
         <div className={`flex flex-row gap-2 `}>
           <SimpleTag title={"Start-up"} color="bg-[#12AFE4]" />
           <SimpleTag title={"Non-profit"} color="bg-[#12AFE4]" />
@@ -46,7 +51,7 @@ export default function Moulay() {
       </div>
       {/* Buttons */}
       <div className="flex flex-col gap-5 mt-5">
-        <div className="font-lexend-medium">Buttons</div>
+        <div className="font-lexend-medium text-2xl">Buttons</div>
         <div className="flex flex-row gap-4 justify-center items-center flex-wrap">
           <ThemeToggle />
           <PrimaryButton title="Freelancer" />
@@ -58,7 +63,9 @@ export default function Moulay() {
       </div>
       {/* Landing page */}
       <div className="flex flex-col gap-5 mt-5">
-        <div className="font-lexend-medium">Landing page componenets</div>
+        <div className="font-lexend-medium text-2xl">
+          Landing page componenets
+        </div>
         <div className="flex flex-row gap-4 justify-center items-center flex-wrap">
           <CoreFunctionalityCard
             title={"Perfect workspace"}
@@ -96,11 +103,11 @@ export default function Moulay() {
       </div>
       {/* input fields */}
       <div className="flex flex-col gap-4 mt-15">
-        <div className="font-lexend-medium">Input fields</div>
+        <div className="font-lexend-medium text-2xl">Input fields</div>
         <div className="flex flex-col justify-start items-start gap-4 w-fit">
           <InputField1 />
           <span>-</span>
-          <InputField2 />
+          <InputField2 placeholder="Enter taxt here" />
           <span>-</span>
           <InputField3 />
           <span>-</span>
@@ -115,7 +122,7 @@ export default function Moulay() {
       </div>
       {/* services and announcement components */}
       <div className="flex flex-col gap-5 mt-15">
-        <div className="font-lexend-medium">
+        <div className="font-lexend-medium text-2xl">
           services and announcement components
         </div>
         <div className="flex flex-row gap-5">
@@ -145,6 +152,16 @@ export default function Moulay() {
               phone_number={"+213 0 00 00 00 00"}
             />
           </div>
+        </div>
+      </div>
+      {/* auth componenets */}
+      <div className="flex flex-col gap-5 mt-15">
+        <div className="font-lexend-medium text-2xl">
+          Authentication componenets
+        </div>
+        <div className="flex flex-row gap-5">
+          <LoginCard />
+          <RoleCard />
         </div>
       </div>
     </div>

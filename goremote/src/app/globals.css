@@ -377,6 +377,42 @@
     );
   }
 
+  .login-card-gradient {
+    background: #000000;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.08) 0%,
+      rgba(24, 27, 31, 1) 100%
+    );
+  }
+
+  .login-card-border-gradient {
+    background: #485260;
+    background: linear-gradient(
+      180deg,
+      rgba(72, 82, 96, 1) 0%,
+      rgba(18, 20, 23, 1) 100%
+    );
+  }
+
+  .role-card-gradient {
+    background: #485260;
+    background: linear-gradient(
+      180deg,
+      rgba(72, 82, 96, 0.11) 0%,
+      rgba(24, 27, 31, 0.11) 30%
+    );
+  }
+
+  .role-card-border-gradient {
+    background: #121417;
+    background: linear-gradient(
+      0deg,
+      rgba(18, 20, 23, 1) 69%,
+      rgba(72, 82, 96, 0.48) 100%
+    );
+  }
+
   /* Font Weight Utilities for Lexend */
   .font-lexend-thin {
     font-family: var(--font-family);

@@ -6,6 +6,7 @@ export default function InputIcon() {
       <div className="text-[var(--color-text-muted)]"><Search /></div>
       <input
         type="text"
+        placeholder="Search"
         className="m-0 p-0 outline-none shadow-none appearance-none box-border grow
   h-8 min-w-48 w-full bg-surface-deep  text-sm font-lexend-normal text-secondary"
       ></input>

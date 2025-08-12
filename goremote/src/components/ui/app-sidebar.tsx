@@ -69,11 +69,26 @@ export function AppSidebar() {
   } = useSidebar();
 
   return (
-    <Sidebar variant="floating" collapsible="icon">
+    <Sidebar
+      variant="floating"
+      collapsible="icon"
+      className={!open ? "cursor-pointer" : ""}
+      onClick={() => {
+        if (!open) {
+          toggleSidebar();
+        }
+      }}
+    >
       <SidebarHeader className="">
         <SidebarMenu>
           <SidebarMenuItem className="">
-            <span className={`font-lexend-medium flex ${state === "collapsed" ? "justify-center" : "justify-start "}  p-4 text-2xl`}>{state === "collapsed" ? "L" : "Logo"}</span>
+            <span
+              className={`font-lexend-medium flex ${
+                state === "collapsed" ? "justify-center" : "justify-start "
+              }  p-4 text-2xl`}
+            >
+              {state === "collapsed" ? "L" : "Logo"}
+            </span>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
@@ -82,7 +97,7 @@ export function AppSidebar() {
           <SidebarGroupLabel className="font-lexend-medium text-sm">
             Main
           </SidebarGroupLabel>
-          <SidebarGroupContent>
+          <SidebarGroupContent className="z-1">
             <SidebarMenu>
               {items.map((item) => {
                 const isActive = pathname === item.url;
