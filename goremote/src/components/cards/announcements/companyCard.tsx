@@ -1,7 +1,7 @@
 import Button3 from "@/components/buttons/buttons3";
 import { SimpleTag } from "@/components/tags/simpleTag";
 import { CompanyCardPros } from "@/types/CompanyCard";
-import { FreelancerProfileCardProps } from "@/types/FreelancerProfileCardProps";
+import { FreelancerProfileCardProps } from "@/types/FreelancerCardsProps";
 import { verify } from "crypto";
 import { Verified } from "lucide-react";
 

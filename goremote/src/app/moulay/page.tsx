@@ -22,11 +22,13 @@ import InputField3 from "@/components/input/inputField3";
 import InputIcon from "@/components/input/inputIcon";
 import InfoCard from "@/components/announcement/infoCard";
 import DropDown1 from "@/components/input/dropDown1";
-import FreelancerProfileCard from "@/components/cards/announcements/freelancerCard";
+import MiniFreelancerCard from "@/components/cards/announcements/MinifreelancerCard";
 import RatingCard from "@/components/cards/announcements/ratingCard";
 import CompanyCard from "@/components/cards/announcements/companyCard";
 import LoginCard from "@/components/auth/loginCard";
 import RoleCard from "@/components/auth/RoleCard";
+import DetailedFreelancerCard from "@/components/freelancerProfile/detailedFreelancerCard";
+import AllInfoFreelancerCard from "@/components/freelancerProfile/allInfoFreelancerCard";
 
 export default function Moulay() {
   return (
@@ -137,7 +139,7 @@ export default function Moulay() {
             delivery_time={"5-7 days"}
             price={""}
           />
-          <FreelancerProfileCard
+          <MiniFreelancerCard
             firstname={"Moulay"}
             availability={true}
             experience_level={"Expert"}
@@ -162,6 +164,40 @@ export default function Moulay() {
         <div className="flex flex-row gap-5">
           <LoginCard />
           <RoleCard />
+        </div>
+      </div>
+      {/* Freelancer profile */}
+      <div className="flex flex-col gap-5 mt-15">
+        <div className="font-lexend-medium text-2xl">
+          Freelancer profile componenets
+        </div>
+        <div className="flex flex-col gap-5 p-10">
+          <DetailedFreelancerCard
+            name={"Moulay"}
+            description={
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+            icons={["github", "linkedin", "gmail", "instagram"]}
+            experience_level={"Expert"}
+            categories={[{ color: "bg-[#00E0FF]", name: "web development" }]}
+            skills={[
+              { color: "bg-[#FFC800]", name: "Go" },
+              { color: "bg-[#FF3C58]", name: "Next.js" },
+            ]}
+          />
+          <AllInfoFreelancerCard
+            name={"Moulay Bouabdelli"}
+            description={
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+            icons={["github", "linkedin", "gmail", "instagram"]}
+            experience_level={"Expert"}
+            categories={[{ color: "bg-[#00E0FF]", name: "web development" }]}
+            skills={[
+              { color: "bg-[#FFC800]", name: "Go" },
+              { color: "bg-[#FF3C58]", name: "Next.js" },
+            ]}
+          />
         </div>
       </div>
     </div>

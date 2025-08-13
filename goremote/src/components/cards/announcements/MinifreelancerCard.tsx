@@ -1,12 +1,12 @@
 import Button3 from "@/components/buttons/buttons3";
 import { AvailabilityTag, SimpleTag } from "@/components/tags/simpleTag";
-import { FreelancerProfileCardProps } from "@/types/FreelancerProfileCardProps";
+import { MiniFreelanceCardProps } from "@/types/FreelancerCardsProps";
 
-export default function FreelancerProfileCard({
+export default function MiniFreelancerCard({
   firstname,
   availability,
   experience_level,
-}: FreelancerProfileCardProps) {
+}: MiniFreelanceCardProps) {
   return (
     <div className="w-96 h-fit rounded-3xl bg-surface-dark flex flex-col justify-center items-center relative">
       <div className="freelancer-card-gradient absolute w-[101%] h-[101%] -z-1 rounded-3xl"></div>
