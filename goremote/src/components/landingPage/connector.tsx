@@ -1,0 +1,110 @@
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
+
+interface ConnectorProps {
+  startRef: React.RefObject<HTMLElement | null>;
+  endRef: React.RefObject<HTMLElement | null>;
+  radius?: number; // arc radius
+  percentage?: number;
+  y_margin?: number
+}
+
+const Connector: React.FC<ConnectorProps> = ({
+  startRef,
+  endRef,
+  radius = 20,
+  percentage = 0.4,
+  y_margin = 0
+}) => {
+  const [path, setPath] = useState("");
+
+  useEffect(() => {
+    if (!startRef.current || !endRef.current) return;
+
+    // --- Get bounding boxes ---
+    const startBox = startRef.current.getBoundingClientRect();
+    const endBox = endRef.current.getBoundingClientRect();
+
+    // --- Centers ---
+    const startX = startBox.left + startBox.width / 2 ;
+    const startY = startBox.top + startBox.height / 2;
+    const endX = endBox.left + endBox.width / 2;
+    const endY = endBox.top + endBox.height / 2;
+
+
+    // --- Distances ---
+    const dx = endX - startX;
+    const dy = endY - startY;
+
+    const horizontalDir = dx >= 0 ? 1 : -1; // 1 = going right, -1 = going left
+    const verticalDir = dy >= 0 ? 1 : -1; // 1 = going down, -1 = going up
+
+    // --- First horizontal length (60% of |dx| this time for symmetry) ---
+    const hLength = Math.abs(dx) * percentage;
+
+    // --- Path building ---
+    let d = `M ${startX } ${startY}`; // start at center
+
+    // 1. Horizontal line
+    const hEndX = startX + horizontalDir * hLength;
+    d += ` L ${hEndX} ${startY}`;
+
+    // 2. First arc (horizontal -> vertical)
+    const arc1EndX = hEndX + (horizontalDir > 0 ? radius : -radius);
+    const arc1EndY = startY + (verticalDir > 0 ? radius : -radius);
+    d += ` A ${radius} ${radius} 0 0 ${
+      horizontalDir > 0 ? (verticalDir > 0 ? 1 : 0) : verticalDir > 0 ? 0 : 1
+    } ${arc1EndX} ${arc1EndY}`;
+
+    // 3. Vertical line (towards endY, stop radius away)
+    const vEndY = endY - verticalDir * radius + y_margin;
+    d += ` L ${arc1EndX} ${vEndY}`;
+
+    // 4. Second arc (vertical -> horizontal)
+    const arc2EndX = arc1EndX + (horizontalDir > 0 ? radius : -radius);
+    const arc2EndY = vEndY + (verticalDir > 0 ? radius : -radius);
+    d += ` A ${radius} ${radius} 0 0 ${
+      horizontalDir > 0 ? (verticalDir > 0 ? 0 : 1) : verticalDir > 0 ? 1 : 0
+    } ${arc2EndX} ${arc2EndY}`;
+
+    // 5. Horizontal line to end center
+    d += ` L ${endX} ${endY + y_margin}`;
+
+    setPath(d);
+  }, [startRef, endRef, radius]);
+
+  return (
+    <svg
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        pointerEvents: "none",
+      }}
+    >
+      <defs>
+        <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+          <feDropShadow
+            dx="0"
+            dy="4"
+            stdDeviation="4"
+            floodColor="black"
+            floodOpacity="0.25"
+          />
+        </filter>
+      </defs>
+
+      <path
+        d={path}
+        fill="none"
+        stroke="#1C1F23"
+        strokeWidth={3}
+        filter="url(#shadow)"
+      />
+    </svg>
+  );
+};
+
+export default Connector;
