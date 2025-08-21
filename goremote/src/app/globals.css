@@ -715,3 +715,20 @@
     rgba(18, 20, 23, 1) 79%
   );
 }
+
+.login-circle-gradient {
+  background: #00ffe0;
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 224, 1) 0%,
+    rgba(18, 20, 23, 0) 47%
+  );
+}
+.login-circle-gradient-2 {
+  background: #00ffe0;
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 224, 0.1) 0%,
+    rgba(18, 20, 23, 0) 47%
+  );
+}

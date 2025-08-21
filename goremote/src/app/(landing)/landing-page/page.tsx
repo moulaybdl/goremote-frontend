@@ -34,9 +34,22 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen overflow-x-hidden">
+    <div className="flex flex-col gap-4 w-full min-h-screen overflow-x-hidden">
+      {/* Slogan*/}
+      <div className="flex flex-col justify-center items-center gap-5 z-1000 mt-72">
+        <span className="text-6xl  font-medium  text-center text-[#009E88]">
+          SLOGAN GOES HERE
+        </span>
+        <span className="font-normal text-3xl text-center text-white">
+          SLOGAN GOES HERE
+        </span>
+        <span className="font-normal text-xl text-center text-secondary w-full max-w-2xl">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua
+        </span>
+      </div>
       {/* hero section */}
-      <div className="flex justify-center items-center w-full relative">
+      <div className="flex justify-center items-center w-full relative overflow-x-hidden overflow-y-hidden">
         <div className="landing-page-hero-circle-gradient z-50 w-[115%] h-[115%] rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
         {/* node */}
         <div className="w-full h-screen nodes-container relative z-20 ">
@@ -121,6 +134,7 @@ export default function LandingPage() {
             radius={50}
             percentage={0.6}
             y_margin={-40}
+            color="#41D1FF"
           />
           <Connector
             startRef={node_l_2}
@@ -128,6 +142,7 @@ export default function LandingPage() {
             radius={50}
             percentage={0.3}
             y_margin={-5}
+            color="#41D1FF"
           />
           <Connector
             startRef={node_l_3}
@@ -135,6 +150,7 @@ export default function LandingPage() {
             radius={50}
             percentage={0.1}
             y_margin={40}
+            color="#FF1A00"
           />
           <Connector
             startRef={node_l_4}
@@ -142,6 +158,7 @@ export default function LandingPage() {
             radius={50}
             percentage={0.4}
             y_margin={60}
+            color="#FF1A00"
           />
           <Connector
             startRef={node_r_1}
@@ -149,6 +166,7 @@ export default function LandingPage() {
             radius={50}
             percentage={0.4}
             y_margin={60}
+            color="#FF1A00"
           />
           <Connector
             startRef={node_r_2}
@@ -156,6 +174,7 @@ export default function LandingPage() {
             radius={50}
             percentage={0.4}
             y_margin={30}
+            color="#41D1FF"
           />
           <Connector
             startRef={node_r_3}
@@ -163,6 +182,7 @@ export default function LandingPage() {
             radius={50}
             percentage={0.2}
             y_margin={-10}
+            color="#41D1FF"
           />
           <Connector
             startRef={node_r_4}
@@ -170,6 +190,7 @@ export default function LandingPage() {
             radius={50}
             percentage={0.6}
             y_margin={-40}
+            color="#41D1FF"
           />
         </div>
         {/* -bacgkround */}
@@ -181,34 +202,7 @@ export default function LandingPage() {
           />
         </div>
       </div>
+
     </div>
   );
 }
-
-// <div className="node-center bg-purple-500 place-self-center">
-//   <Image src={CentralNode} className="" alt={""} />
-// </div>
-// <div className="node-l-2 bg-red-300">
-//   <Image src={Node} alt={""} className="" />
-// </div>
-// <div className="node-l-3 bg-green-300">
-//   <Image src={Node} alt={""} />
-// </div>
-// <div className="node-l-4 bg-blue-300">
-//   <Image src={Node} alt={""} />
-// </div>
-// <div className="node-l-5 bg-yellow-300">
-//   <Image src={Node} alt={""} />
-// </div>
-// <div className="node-r-6 bg-rose-300">
-//   <Image src={Node} alt={""} />
-// </div>
-// <div className="node-r-7 bg-cyan-300">
-//   <Image src={Node} alt={""} />
-// </div>
-// <div className="node-r-8 bg-gray-300">
-//   <Image src={Node} alt={""} />
-// </div>
-// <div className="node-r-9 bg-amber-300">
-//   <Image src={Node} alt={""} />
-// </div>

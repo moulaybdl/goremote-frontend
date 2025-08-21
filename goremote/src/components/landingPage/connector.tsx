@@ -1,12 +1,16 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { reverse } from "dns";
+import { cp } from "fs";
 
 interface ConnectorProps {
   startRef: React.RefObject<HTMLElement | null>;
   endRef: React.RefObject<HTMLElement | null>;
   radius?: number; // arc radius
   percentage?: number;
-  y_margin?: number
+  y_margin?: number;
+  color?: string | undefined
 }
 
 const Connector: React.FC<ConnectorProps> = ({
@@ -14,9 +18,12 @@ const Connector: React.FC<ConnectorProps> = ({
   endRef,
   radius = 20,
   percentage = 0.4,
-  y_margin = 0
+  y_margin = 0,
+  color
 }) => {
   const [path, setPath] = useState("");
+  const [vertDir, setVertDir] = useState(1);
+  const [horDir, setHorDir] = useState(1);
 
   useEffect(() => {
     if (!startRef.current || !endRef.current) return;
@@ -26,11 +33,10 @@ const Connector: React.FC<ConnectorProps> = ({
     const endBox = endRef.current.getBoundingClientRect();
 
     // --- Centers ---
-    const startX = startBox.left + startBox.width / 2 ;
+    const startX = startBox.left + startBox.width / 2;
     const startY = startBox.top + startBox.height / 2;
     const endX = endBox.left + endBox.width / 2;
     const endY = endBox.top + endBox.height / 2;
-
 
     // --- Distances ---
     const dx = endX - startX;
@@ -39,11 +45,14 @@ const Connector: React.FC<ConnectorProps> = ({
     const horizontalDir = dx >= 0 ? 1 : -1; // 1 = going right, -1 = going left
     const verticalDir = dy >= 0 ? 1 : -1; // 1 = going down, -1 = going up
 
+    setVertDir(verticalDir);
+    setHorDir(horizontalDir);
+
     // --- First horizontal length (60% of |dx| this time for symmetry) ---
     const hLength = Math.abs(dx) * percentage;
 
     // --- Path building ---
-    let d = `M ${startX } ${startY}`; // start at center
+    let d = `M ${startX} ${startY}`; // start at center
 
     // 1. Horizontal line
     const hEndX = startX + horizontalDir * hLength;
@@ -103,6 +112,36 @@ const Connector: React.FC<ConnectorProps> = ({
         strokeWidth={3}
         filter="url(#shadow)"
       />
+      {/* Animated glowing path */}
+      <motion.path
+        d={path}
+        stroke="url(#glowGradient)"
+        strokeWidth="6"
+        fill="none"
+        strokeLinecap="round"
+        strokeDasharray="100 300"
+        initial={{
+          strokeDashoffset: 0,
+          // opacity: 0.6
+        }}
+        animate={{
+          strokeDashoffset: horDir > 0 ? -400 : 400, // moves along path
+          // opacity: [0.4, 1, 0.4], // pulse
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: 3,
+          ease: "linear",
+        }}
+      />
+
+      {/* Gradient for glow */}
+      <defs>
+        <linearGradient id="glowGradient" x1="0" y1="0" x2="1" y2="1">
+          <stop stopColor="#1B1E21" stopOpacity="0" />
+          <stop offset="1" stopColor={color} />
+        </linearGradient>
+      </defs>
     </svg>
   );
 };
