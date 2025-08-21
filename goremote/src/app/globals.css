@@ -8,6 +8,14 @@
    COLOR THEME SYSTEM
    ============================================================================= */
 
+@theme {
+  --font-lexend: var(--font-lexend);
+}
+
+.font-lexend {
+  font-family: var(--font-lexend);
+}
+
 @layer base {
   :root {
     /* GoRemote Basic Colors */

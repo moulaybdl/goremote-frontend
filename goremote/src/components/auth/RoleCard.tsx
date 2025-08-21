@@ -1,8 +1,13 @@
+"use client"
+
+import { useRouter } from "next/navigation";
 import Button2 from "../buttons/button2";
 import CompanyIconCard from "./icons/companybg";
 import FreelancerCardIcon from "./icons/freelancerbg";
 
 export default function RoleCard() {
+  const router = useRouter()
+
   return (
     <div className="w-fit h-fit flex justify-center items-center rounded-3xl bg-[#141619] elevation-3 relative">
       <div className="role-card-border-gradient absolute -z-1 h-[101%] w-[101%] rounded-3xl"></div>
@@ -18,7 +23,7 @@ export default function RoleCard() {
         <div className="flex flex-row gap-2 w-full justify-center items-center">
           <div className="flex flex-row justify-center items-center  relative bg-[#141619]">
             <div className=" absolute">
-              <Button2 title="Company" rotationDir="right" />
+              <Button2 title="Company" rotationDir="right" onClick={() => {router.push("/register")}} />
             </div>
             <FreelancerCardIcon />
           </div>
@@ -79,7 +84,7 @@ export default function RoleCard() {
           </div>
           <div className="flex flex-row justify-center items-center  relative bg-[#141619]">
             <div className=" absolute">
-              <Button2 title="Freelancer" rotationDir="left" />
+              <Button2 title="Freelancer" rotationDir="left" onClick={() => {router.push("/register")}}/>
             </div>
             <FreelancerCardIcon />
           </div>
