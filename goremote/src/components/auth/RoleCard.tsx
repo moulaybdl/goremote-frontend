@@ -33,7 +33,7 @@ export default function RoleCard() {
               <path
                 d="M2 0V117"
                 stroke="url(#paint0_linear_547_621)"
-                stroke-width="3"
+                strokeWidth="3"
               />
               <defs>
                 <linearGradient
@@ -44,8 +44,8 @@ export default function RoleCard() {
                   y2="117"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#121417" />
-                  <stop offset="1" stop-color="#A6ACB8" stop-opacity="0.6" />
+                  <stop stopColor="#121417" />
+                  <stop offset="1" stopColor="#A6ACB8" stopOpacity="0.6" />
                 </linearGradient>
               </defs>
             </svg>
@@ -60,7 +60,7 @@ export default function RoleCard() {
               <path
                 d="M2 117V-2.32458e-06"
                 stroke="url(#paint0_linear_547_622)"
-                stroke-width="3"
+                strokeWidth="3"
               />
               <defs>
                 <linearGradient
@@ -71,8 +71,8 @@ export default function RoleCard() {
                   y2="0"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#121417" />
-                  <stop offset="1" stop-color="#A6ACB8" stop-opacity="0.6" />
+                  <stop stopColor="#121417" />
+                  <stop offset="1" stopColor="#A6ACB8" stopOpacity="0.6" />
                 </linearGradient>
               </defs>
             </svg>

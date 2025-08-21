@@ -1,18 +1,16 @@
 "use client";
 
 import Image from "next/image";
-
 import Background from "@/public/login-background.png";
 import Left from "@/public/login-left.svg";
 import Right from "@/public/login-right.svg";
-
-import LoginCard from "@/components/auth/loginCard";
 import { motion } from "framer-motion";
+import RoleCard from "@/components/auth/RoleCard";
 
-export default function LoginPage() {
+export default function ChooseRole() {
   return (
     <div className="w-full h-screen relative flex justify-center items-center overflow-hidden">
-      {/* gradient */}
+      {/* background all in aboslute mode */}
       <div className="login-circle-gradient-2 w-[170%] aspect-square rounded-full absolute z-5 bottom-[5px] mix-blend-lighten"></div>
       <div className="login-circle-gradient aspect-square w-full z-10  rounded-[50%] absolute bottom-[40%] mix-blend-overlay"></div>
       <div className="absolute bg-contain bg-no-repeat bg-center -top-[70%]">
@@ -23,8 +21,8 @@ export default function LoginPage() {
         />
       </div>
 
-      {/* login component */}
-      <div className="w-full flex items-center justify-center gap-2">
+      {/* card */}
+      <div className="w-full flex justify-center items-center gap-2">
         <motion.div
           className=""
           initial={{ opacity: 0, x: -100 }}
@@ -34,7 +32,7 @@ export default function LoginPage() {
           <Image src={Left} alt={""} />
         </motion.div>
         <motion.div
-          className="z-100"
+          className="z-1000"
           initial={{
             y: 100,
             opacity: 0,
@@ -47,7 +45,7 @@ export default function LoginPage() {
             duration: 1.5,
           }}
         >
-          <LoginCard />
+          <RoleCard />
         </motion.div>
         <motion.div
           className=""

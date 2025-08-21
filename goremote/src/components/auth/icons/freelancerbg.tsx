@@ -22,7 +22,7 @@ export default function FreelancerCardIcon() {
               rx="7"
               fill="#202020"
               stroke="#181C21"
-              stroke-width="24"
+              strokeWidth="24"
               mask="url(#path-3-inside-1_490_636)"
             />
           </g>
@@ -39,7 +39,7 @@ export default function FreelancerCardIcon() {
         </g>
         <g
           opacity="0.18"
-          clip-path="url(#clip0_490_636)"
+          clipPath="url(#clip0_490_636)"
           filter="url(#filter3_f_490_636)"
         >
           <path
@@ -226,7 +226,7 @@ export default function FreelancerCardIcon() {
               rx="7"
               fill="#202020"
               stroke="#181C21"
-              stroke-width="24"
+              strokeWidth="24"
               mask="url(#path-48-inside-2_490_636)"
             />
           </g>
@@ -387,7 +387,7 @@ export default function FreelancerCardIcon() {
               rx="7"
               fill="#202020"
               stroke="#181C21"
-              stroke-width="24"
+              strokeWidth="24"
               mask="url(#path-84-inside-3_490_636)"
             />
           </g>
@@ -402,7 +402,7 @@ export default function FreelancerCardIcon() {
             />
           </g>
         </g>
-        <g opacity="0.28" clip-path="url(#clip1_490_636)">
+        <g opacity="0.28" clipPath="url(#clip1_490_636)">
           <path
             d="M116.797 212.391H120.172V225.469H115.953V213.234C115.953 213.011 116.042 212.796 116.2 212.638C116.358 212.48 116.573 212.391 116.797 212.391Z"
             fill="#DCDCDC"
@@ -642,9 +642,9 @@ export default function FreelancerCardIcon() {
           width="80"
           height="80"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -677,9 +677,9 @@ export default function FreelancerCardIcon() {
           width="46.7"
           height="44"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -730,9 +730,9 @@ export default function FreelancerCardIcon() {
           width="40.4379"
           height="40.438"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -764,7 +764,7 @@ export default function FreelancerCardIcon() {
             in="coloredNoise1"
             result="noise1Clipped"
           />
-          <feFlood flood-color="rgba(0, 0, 0, 0.14)" result="color1Flood" />
+          <feFlood floodColor="rgba(0, 0, 0, 0.14)" result="color1Flood" />
           <feComposite
             operator="in"
             in2="noise1Clipped"
@@ -787,9 +787,9 @@ export default function FreelancerCardIcon() {
           width="27.3621"
           height="27.3621"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -808,9 +808,9 @@ export default function FreelancerCardIcon() {
           width="80"
           height="80"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -843,9 +843,9 @@ export default function FreelancerCardIcon() {
           width="46.7"
           height="44"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -896,9 +896,9 @@ export default function FreelancerCardIcon() {
           width="40.4379"
           height="40.438"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -930,7 +930,7 @@ export default function FreelancerCardIcon() {
             in="coloredNoise1"
             result="noise1Clipped"
           />
-          <feFlood flood-color="rgba(0, 0, 0, 0.14)" result="color1Flood" />
+          <feFlood floodColor="rgba(0, 0, 0, 0.14)" result="color1Flood" />
           <feComposite
             operator="in"
             in2="noise1Clipped"
@@ -953,9 +953,9 @@ export default function FreelancerCardIcon() {
           width="80"
           height="80"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -988,9 +988,9 @@ export default function FreelancerCardIcon() {
           width="46.7"
           height="44"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -1041,9 +1041,9 @@ export default function FreelancerCardIcon() {
           width="40.4379"
           height="40.438"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -1075,7 +1075,7 @@ export default function FreelancerCardIcon() {
             in="coloredNoise1"
             result="noise1Clipped"
           />
-          <feFlood flood-color="rgba(0, 0, 0, 0.14)" result="color1Flood" />
+          <feFlood floodColor="rgba(0, 0, 0, 0.14)" result="color1Flood" />
           <feComposite
             operator="in"
             in2="noise1Clipped"
@@ -1099,8 +1099,8 @@ export default function FreelancerCardIcon() {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(134 134) rotate(90) scale(134)"
         >
-          <stop stop-color="#141619" stop-opacity="0" />
-          <stop offset="1" stop-color="#141619" />
+          <stop stopColor="#141619" stopOpacity="0" />
+          <stop offset="1" stopColor="#141619" />
         </radialGradient>
         <clipPath id="clip0_490_636">
           <rect
