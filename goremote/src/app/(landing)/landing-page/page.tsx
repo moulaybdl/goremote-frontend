@@ -7,6 +7,8 @@ import LandingPageBackground from "./svgs/landingpage_background.svg";
 import { useEffect, useRef } from "react";
 import Connector from "@/components/landingPage/connector";
 
+import VertSeperator from "@/public/vert-seperator.svg";
+
 export default function LandingPage() {
   const central_node = useRef<HTMLImageElement>(null);
   const node_l_1 = useRef<HTMLImageElement>(null);
@@ -34,9 +36,9 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-4 w-full min-h-screen overflow-x-hidden">
+    <div className="flex flex-col gap-32 w-full min-h-screen overflow-x-hidden relative">
       {/* Slogan*/}
-      <div className="flex flex-col justify-center items-center gap-5 z-1000 mt-72">
+      <div className="flex flex-col justify-center items-center gap-5 z-1000 mt-44">
         <span className="text-6xl  font-medium  text-center text-[#009E88]">
           SLOGAN GOES HERE
         </span>
@@ -126,73 +128,6 @@ export default function LandingPage() {
             />
           </div>
         </div>
-        {/* connections */}
-        <div className="absolute w-full h-full">
-          <Connector
-            startRef={node_l_1}
-            endRef={central_node}
-            radius={50}
-            percentage={0.6}
-            y_margin={-40}
-            color="#41D1FF"
-          />
-          <Connector
-            startRef={node_l_2}
-            endRef={central_node}
-            radius={50}
-            percentage={0.3}
-            y_margin={-5}
-            color="#41D1FF"
-          />
-          <Connector
-            startRef={node_l_3}
-            endRef={central_node}
-            radius={50}
-            percentage={0.1}
-            y_margin={40}
-            color="#FF1A00"
-          />
-          <Connector
-            startRef={node_l_4}
-            endRef={central_node}
-            radius={50}
-            percentage={0.4}
-            y_margin={60}
-            color="#FF1A00"
-          />
-          <Connector
-            startRef={node_r_1}
-            endRef={central_node}
-            radius={50}
-            percentage={0.4}
-            y_margin={60}
-            color="#FF1A00"
-          />
-          <Connector
-            startRef={node_r_2}
-            endRef={central_node}
-            radius={50}
-            percentage={0.4}
-            y_margin={30}
-            color="#41D1FF"
-          />
-          <Connector
-            startRef={node_r_3}
-            endRef={central_node}
-            radius={50}
-            percentage={0.2}
-            y_margin={-10}
-            color="#41D1FF"
-          />
-          <Connector
-            startRef={node_r_4}
-            endRef={central_node}
-            radius={50}
-            percentage={0.6}
-            y_margin={-40}
-            color="#41D1FF"
-          />
-        </div>
         {/* -bacgkround */}
         <div className="w-full aspect-square flex justify-center items-center absolute rounded-full">
           <Image
@@ -202,7 +137,90 @@ export default function LandingPage() {
           />
         </div>
       </div>
+      {/* connections */}
+      {/* <div className="absolute w-full h-full">
+        <Connector
+          startRef={node_l_1}
+          endRef={central_node}
+          radius={50}
+          percentage={0.6}
+          y_margin={-40}
+          color="#41D1FF"
+        />
+        <Connector
+          startRef={node_l_2}
+          endRef={central_node}
+          radius={50}
+          percentage={0.3}
+          y_margin={-5}
+          color="#41D1FF"
+        />
+        <Connector
+          startRef={node_l_3}
+          endRef={central_node}
+          radius={50}
+          percentage={0.1}
+          y_margin={40}
+          color="#FF1A00"
+        />
+        <Connector
+          startRef={node_l_4}
+          endRef={central_node}
+          radius={50}
+          percentage={0.4}
+          y_margin={60}
+          color="#FF1A00"
+        />
+        <Connector
+          startRef={node_r_1}
+          endRef={central_node}
+          radius={50}
+          percentage={0.4}
+          y_margin={60}
+          color="#FF1A00"
+        />
+        <Connector
+          startRef={node_r_2}
+          endRef={central_node}
+          radius={50}
+          percentage={0.4}
+          y_margin={30}
+          color="#41D1FF"
+        />
+        <Connector
+          startRef={node_r_3}
+          endRef={central_node}
+          radius={50}
+          percentage={0.2}
+          y_margin={-10}
+          color="#41D1FF"
+        />
+        <Connector
+          startRef={node_r_4}
+          endRef={central_node}
+          radius={50}
+          percentage={0.6}
+          y_margin={-40}
+          color="#41D1FF"
+        />
+      </div> */}
 
+      {/* features section */}
+      <div className="h-screen w-full flex flex-col justify-start items-center gap-10 ">
+        {/* header */}
+        <div className="flex flex-col items-center gap-6">
+          <div className="px-4 rounded-full elevation-2 bg-[var(--border-dark)] font-normal text-accent-alt  text-sm w-fit">
+            Features
+          </div>
+          <div className="flex flex-col gap-3 text-2xl text-center font-normal">
+            Whether you’re chasing projects or chasing talent <br />
+            <div className="text-4xl text-center font-medium">
+              we’ve got you both covered!
+            </div>
+          </div>
+        </div>
+        {/* features list */}
+      </div>
     </div>
   );
 }

@@ -91,10 +91,6 @@ export default function RegisterPage() {
             steps={[
               "basic info",
               "basic info",
-              "basic info",
-              "basic info",
-              "basic info",
-              "basic info",
             ]}
             currentStep={currentStep}
           />

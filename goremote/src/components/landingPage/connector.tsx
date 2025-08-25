@@ -1,8 +1,34 @@
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { RefObject, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { reverse } from "dns";
 import { cp } from "fs";
+
+function getAbsoluteCenter(
+  ref: RefObject<HTMLElement | null>
+): { x: number; y: number } | null {
+  const el = ref.current;
+  if (!el) return null;
+
+  const rect = el.getBoundingClientRect();
+  let scrollLeft = 0;
+  let scrollTop = 0;
+
+  let parent: HTMLElement | null = el.parentElement;
+  while (parent && parent !== document.body) {
+    if (parent.scrollLeft) scrollLeft += parent.scrollLeft;
+    if (parent.scrollTop) scrollTop += parent.scrollTop;
+    parent = parent.parentElement;
+  }
+
+  scrollLeft += window.scrollX;
+  scrollTop += window.scrollY;
+
+  return {
+    x: rect.left + scrollLeft + rect.width / 2,
+    y: rect.top + scrollTop + rect.height / 2,
+  };
+}
 
 interface ConnectorProps {
   startRef: React.RefObject<HTMLElement | null>;
@@ -10,7 +36,7 @@ interface ConnectorProps {
   radius?: number; // arc radius
   percentage?: number;
   y_margin?: number;
-  color?: string | undefined
+  color?: string | undefined;
 }
 
 const Connector: React.FC<ConnectorProps> = ({
@@ -19,7 +45,7 @@ const Connector: React.FC<ConnectorProps> = ({
   radius = 20,
   percentage = 0.4,
   y_margin = 0,
-  color
+  color,
 }) => {
   const [path, setPath] = useState("");
   const [vertDir, setVertDir] = useState(1);
@@ -32,11 +58,16 @@ const Connector: React.FC<ConnectorProps> = ({
     const startBox = startRef.current.getBoundingClientRect();
     const endBox = endRef.current.getBoundingClientRect();
 
-    // --- Centers ---
-    const startX = startBox.left + startBox.width / 2;
-    const startY = startBox.top + startBox.height / 2;
-    const endX = endBox.left + endBox.width / 2;
-    const endY = endBox.top + endBox.height / 2;
+    const start = getAbsoluteCenter(startRef);
+    const end = getAbsoluteCenter(endRef);
+
+    const startX = start?.x;
+    const startY = start?.y;
+    const endX = end?.x;
+    const endY = end?.y;
+
+    if (startX === undefined || startY === undefined) return;
+    if (endX === undefined || endY === undefined) return;
 
     // --- Distances ---
     const dx = endX - startX;
