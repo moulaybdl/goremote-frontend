@@ -144,7 +144,7 @@ const Connector: React.FC<ConnectorProps> = ({
         filter="url(#shadow)"
       />
       {/* Animated glowing path */}
-      <motion.path
+      {/* <motion.path
         d={path}
         stroke="url(#glowGradient)"
         strokeWidth="6"
@@ -164,15 +164,15 @@ const Connector: React.FC<ConnectorProps> = ({
           duration: 3,
           ease: "linear",
         }}
-      />
+      /> */}
 
       {/* Gradient for glow */}
-      <defs>
+      {/* <defs>
         <linearGradient id="glowGradient" x1="0" y1="0" x2="1" y2="1">
           <stop stopColor="#1B1E21" stopOpacity="0" />
           <stop offset="1" stopColor={color} />
         </linearGradient>
-      </defs>
+      </defs> */}
     </svg>
   );
 };
