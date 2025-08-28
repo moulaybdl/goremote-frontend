@@ -1,12 +1,26 @@
 import { TemplateString } from "next/dist/lib/metadata/types/metadata-types";
 
+import { motion } from "framer-motion";
+
 type cursorProp = {
   color: string;
 };
 
 export default function CursorSVG({ color }: cursorProp) {
+  const variants = {
+    initial: {
+      color: "text-gray-200",
+    },
+    hover: {
+      color: "text-blue-400",
+    },
+  };
+
   return (
-    <div className={`${color}`}>
+    <motion.div
+      className={`${color}`}
+      variants={variants}
+    >
       <svg
         width="11"
         height="14"
@@ -19,6 +33,6 @@ export default function CursorSVG({ color }: cursorProp) {
           fill="currentColor"
         />
       </svg>
-    </div>
+    </motion.div>
   );
 }

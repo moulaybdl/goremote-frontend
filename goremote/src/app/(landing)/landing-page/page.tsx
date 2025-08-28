@@ -7,6 +7,8 @@ import LandingPageBackground from "./svgs/landingpage_background.svg";
 import { useEffect, useRef, useState } from "react";
 import Connector from "@/components/landingPage/connector";
 
+import { motion, useInView } from "framer-motion";
+
 import VertSeperator from "@/public/vert-seperator.svg";
 import FeatureWorkspaceCard from "./cards/workspaceCard";
 import DreamPortfolioCard from "./cards/dreamPortfolio";
@@ -104,6 +106,74 @@ export default function LandingPage() {
 
   const selectedSide = useRef(0);
   const [currentElement, setCurrentElement] = useState(<></>);
+
+  const features_section_container_ref = useRef(null);
+  const features_container_inview = useInView(features_section_container_ref);
+
+  const features_section_container = {
+    initial: {},
+    inView: {},
+  };
+
+  const bottom_container = {
+    initial: {},
+    inView: {},
+  };
+
+  const header_section_container = {
+    initial: {
+      opacity: 0,
+      y: -100,
+    },
+    inView: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
+  const portfolio_card = {
+    initial: {
+      opacity: 0,
+      x: -100,
+    },
+    inView: {
+      opacity: 1,
+      x: 0,
+    },
+  };
+
+  const chat_card = {
+    initial: {
+      opacity: 0,
+      x: 100,
+    },
+    inView: {
+      opacity: 1,
+      x: 0,
+    },
+  };
+
+  const workspace_card = {
+    initial: {
+      opacity: 0,
+      x: -100,
+    },
+    inView: {
+      opacity: 1,
+      x: 0,
+    },
+  };
+
+  const assistant_card = {
+    initial: {
+      opacity: 0,
+      x: 100,
+    },
+    inView: {
+      opacity: 1,
+      x: 0,
+    },
+  };
 
   useEffect(() => {
     if (
@@ -323,14 +393,28 @@ export default function LandingPage() {
       /> */}
       {}
       {/* Features */}
-      <div className="flex flex-col gap-10 justify-center items-center m-20 relative ">
+      <motion.div
+        className="flex flex-col gap-10 justify-center items-center m-20 relative "
+        ref={features_section_container_ref}
+        variants={features_section_container}
+        initial="initial"
+        whileInView={"inView"}
+      >
         <div className="w-full absolute flex justify-center items-center">
           <Image src={rectBG} alt="" />
         </div>
+        {/* features */}
         <div className="flex flex-col gap-5 z-1">
           <div className="flex flex-row gap-4">
             <div className="self-end flex flex-col gap-16">
-              <div className="flex flex-col gap-4">
+              {/* header */}
+              <motion.div
+                className="flex flex-col gap-4"
+                variants={header_section_container}
+                transition={{
+                  duration: 0.9,
+                }}
+              >
                 <div className="text-primary-100 bg-primary-600 text-sm font-normal w-fit px-5 py-1 rounded-full border border-primary-100">
                   Features
                 </div>
@@ -340,23 +424,45 @@ export default function LandingPage() {
                 <div className="text-4xl font-medium text-neutral-100">
                   we’ve got you both covered!
                 </div>
-              </div>
-              <DreamPortfolioCard />
+              </motion.div>
+              {/* portfolio card */}
+              <motion.div
+                className=""
+                variants={portfolio_card}
+                transition={{ duration: 0.8 }}
+              >
+                <DreamPortfolioCard />
+              </motion.div>
             </div>
-            <div className="self-end">
+            {/* assitant card */}
+            <motion.div
+              className="self-end"
+              variants={assistant_card}
+              transition={{ duration: 0.8 }}
+            >
               <AssistantCard />
-            </div>
+            </motion.div>
           </div>
-          <div className="flex flex-row gap-4">
+          <motion.div className="flex flex-row gap-4" variants={bottom_container} initial="initial" whileInView="inView">
             {/* portfolio */}
-            <FeatureWorkspaceCard />
+            <motion.div
+              className=""
+              variants={workspace_card}
+              transition={{ duration: 0.8 }}
+            >
+              <FeatureWorkspaceCard />
+            </motion.div>
             {/* header + workspace card */}
-            <div className="flex flex-col gap-6">
+            <motion.div
+              className="flex flex-col gap-6"
+              variants={chat_card}
+              transition={{ duration: 0.8 }}
+            >
               <MatchingSystemCard />
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
       {/* CTA */}
       <div className="m-20 mt-0 mb-0 relative h-screen">
         {/* line */}
