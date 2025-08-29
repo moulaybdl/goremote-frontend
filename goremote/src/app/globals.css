@@ -964,18 +964,18 @@
 }
 
 .login-circle-gradient {
-  background: #00ffe0;
+  background: #C77DFF;
   background: radial-gradient(
     circle,
-    rgba(0, 255, 224, 1) 0%,
+    #9D4EDD 0%,
     rgba(18, 20, 23, 0) 47%
   );
 }
 .login-circle-gradient-2 {
-  background: #00ffe0;
+  background: #C77DFF;
   background: radial-gradient(
     circle,
-    rgba(0, 255, 224, 0.1) 0%,
+    #9D4EDD 0%,
     rgba(18, 20, 23, 0) 47%
   );
 }
@@ -995,5 +995,13 @@
     circle,
     rgba(199, 125, 255, 1) 0%,
     rgba(18, 20, 23, 0) 58%
+  );
+}
+
+.general-background-gradient {
+  background: radial-gradient(
+    221.6% 141.42% at 0% 0%,
+    var(--neutral-800) 0%,
+    var(--primary-500) 100%
   );
 }

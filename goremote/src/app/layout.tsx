@@ -20,23 +20,29 @@ export const metadata: Metadata = {
 
 import "./globals.css";
 import { Lexend } from "next/font/google";
+import { LanguageProvider } from "@/context/LanguageContext";
+import { getServerLanguage } from "@/lib/server-cookies";
 
 const lexend = Lexend({
   subsets: ["latin"],
   variable: "--font-lexend",
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const initialLanguage = await getServerLanguage();
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${lexend.variable} bg-neutral-800 antialiased`}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <LanguageProvider initialLanguage={initialLanguage}>
+          <ThemeProvider>{children}</ThemeProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

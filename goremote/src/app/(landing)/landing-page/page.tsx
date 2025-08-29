@@ -175,6 +175,33 @@ export default function LandingPage() {
     },
   };
 
+  const cta_container = {
+    initial: {},
+    inView: {},
+  };
+
+  const cta_left = {
+    initial: {
+      opacity: 0,
+      x: -100,
+    },
+    inView: {
+      opacity: 1,
+      x: 0,
+    },
+  };
+
+  const cta_right = {
+    initial: {
+      opacity: 0,
+      x: 100,
+    },
+    inView: {
+      opacity: 1,
+      x: 0,
+    },
+  };
+
   useEffect(() => {
     if (
       central_node.current === null ||
@@ -443,7 +470,12 @@ export default function LandingPage() {
               <AssistantCard />
             </motion.div>
           </div>
-          <motion.div className="flex flex-row gap-4" variants={bottom_container} initial="initial" whileInView="inView">
+          <motion.div
+            className="flex flex-row gap-4"
+            variants={bottom_container}
+            initial="initial"
+            whileInView="inView"
+          >
             {/* portfolio */}
             <motion.div
               className=""
@@ -475,9 +507,18 @@ export default function LandingPage() {
           </div>
         </div>
         {/* content */}
-        <div className="flex flex-row gap-48 mb-20 absolute top-[100px] px-10">
-          <div className="flex flex-col gap-10 ">
-            {/* headeline */}
+        <motion.div
+          className="flex flex-row gap-48 mb-20 absolute top-[100px] px-10"
+          variants={cta_container}
+          initial="initial"
+          whileInView="inView"
+        >
+          {/* headeline */}
+          <motion.div
+            className="flex flex-col gap-10 "
+            variants={cta_left}
+            transition={{ duration: 0.8 }}
+          >
             <div className="text-4xl font-medium text-neutral-50">
               Happy Freelancers, Satisfied Companies
             </div>
@@ -489,12 +530,16 @@ export default function LandingPage() {
               <InputField1 />
               <Button3 title={"Get Started"} radius="rounded-[9px]" />
             </div>
-          </div>
+          </motion.div>
           {/* image */}
-          <div className="bg-neutral-600 border w-fit h-fit border-neutral-400 rounded-[42px] rotate-15">
+          <motion.div
+            className="bg-neutral-600 border w-fit h-fit border-neutral-400 rounded-[42px] rotate-15"
+            variants={cta_right}
+            transition={{ duration: 0.8 }}
+          >
             <Image src={ctaBG} alt={""} />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* CTA 2 */}

@@ -9,7 +9,16 @@ import Button3 from "@/components/buttons/buttons3";
 import { RegistrationFormFieldProps } from "@/types/inputFieldProps";
 import { useState } from "react";
 
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
+import InputWithHelper from "@/components/input/InputWithHelper";
+import { Button } from "@/components/ui/button";
+import CustomButton from "@/components/ui/customButton";
+import SimpleInput from "@/components/input/simpleInput";
+import CheckBoxQuestion from "@/components/input/checkBoxQuestion";
+import RadioQuestion from "@/components/input/radioButtonQuestion";
+import InputButton from "@/components/input/InputButton";
+import FreelancerRegisterStep1 from "./freelancer-step1";
+import FreelancerRegisterStep2 from "./freelancer-step2";
 
 const fields: RegistrationFormFieldProps[] = [
   {
@@ -77,51 +86,10 @@ const steps: FormProps[] = [
 ];
 
 export default function RegisterPage() {
-  const [currentStep, setCurrentStep] = useState(0);
   return (
-    <div className="w-full flex justify-center items-center">
-      <AuthGeneralCard>
-        <div className="m-10 flex flex-col justify-center items-center w-4xl gap-20">
-          {/* header */}
-          <div className="text-3xl font-lexend text-white">
-            Let’s setup your profile!
-          </div>
-          {/* stepper */}
-          <Stepper
-            steps={[
-              "basic info",
-              "basic info",
-            ]}
-            currentStep={currentStep}
-          />
-          {/* input fields */}
-          {
-            <div className="">
-              <Form
-                step_name={steps[currentStep].step_name}
-                fields={steps[currentStep].fields}
-              />
-            </div>
-          }
-          {/* action buttons */}
-          <div className="flex gap-4">
-            <Button4
-              title={"Previous"}
-              onClick={() => {
-                if (currentStep > 0) {
-                  setCurrentStep(currentStep - 1);
-                }
-              }}
-            />
-            <Button3
-              title={"Next"}
-              onClick={() => {
-                setCurrentStep(currentStep + 1);
-              }}
-            />
-          </div>
-        </div>
-      </AuthGeneralCard>
+    <div className="w-full flex justify-center items-center mt-15">
+      <FreelancerRegisterStep1 />
+      {/* <FreelancerRegisterStep2 /> */}
     </div>
   );
 }
