@@ -7,7 +7,7 @@ import Button2 from "@/components/buttons/button2";
 import Button4 from "@/components/buttons/button4";
 import Button3 from "@/components/buttons/buttons3";
 import { RegistrationFormFieldProps } from "@/types/inputFieldProps";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 import InputWithHelper from "@/components/input/InputWithHelper";
@@ -19,6 +19,9 @@ import RadioQuestion from "@/components/input/radioButtonQuestion";
 import InputButton from "@/components/input/InputButton";
 import FreelancerRegisterStep1 from "./freelancer-step1";
 import FreelancerRegisterStep2 from "./freelancer-step2";
+import CompanyRegisterStep1 from "./company-step1";
+import { Logger } from "@/util/Logger";
+import CompanyRegisterStep2 from "./company-step2";
 
 const fields: RegistrationFormFieldProps[] = [
   {
@@ -86,9 +89,15 @@ const steps: FormProps[] = [
 ];
 
 export default function RegisterPage() {
+  // useEffect(() => {
+  //   Logger.logError("Error Occured", "RegisterPage");
+  // }, []);
+
   return (
     <div className="w-full flex justify-center items-center mt-15">
-      <FreelancerRegisterStep1 />
+      {/* <FreelancerRegisterStep1 /> */}
+      {/* <CompanyRegisterStep1 /> */}
+      <CompanyRegisterStep2 />
       {/* <FreelancerRegisterStep2 /> */}
     </div>
   );

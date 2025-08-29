@@ -22,6 +22,7 @@ import "./globals.css";
 import { Lexend } from "next/font/google";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { getServerLanguage } from "@/lib/server-cookies";
+import { Toaster } from "@/components/ui/sonner";
 
 const lexend = Lexend({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${lexend.variable} bg-neutral-800 antialiased`}
       >
+        <Toaster />
         <LanguageProvider initialLanguage={initialLanguage}>
           <ThemeProvider>{children}</ThemeProvider>
         </LanguageProvider>

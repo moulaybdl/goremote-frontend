@@ -16,7 +16,7 @@ export default function FreelancerRegisterStep1() {
         </div>
       </div>
       {/* content */}
-      <div className="w-full flex flex-col justify-start items-start gap-8 elevation-2">
+      <div className="w-full flex flex-col justify-start items-start gap-8 ">
         <div className="flex flex-row gap-4 items-center">
           <SimpleInput
             label={"Firstname"}

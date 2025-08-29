@@ -964,20 +964,12 @@
 }
 
 .login-circle-gradient {
-  background: #C77DFF;
-  background: radial-gradient(
-    circle,
-    #9D4EDD 0%,
-    rgba(18, 20, 23, 0) 47%
-  );
+  background: #c77dff;
+  background: radial-gradient(circle, #9d4edd 0%, rgba(18, 20, 23, 0) 47%);
 }
 .login-circle-gradient-2 {
-  background: #C77DFF;
-  background: radial-gradient(
-    circle,
-    #9D4EDD 0%,
-    rgba(18, 20, 23, 0) 47%
-  );
+  background: #c77dff;
+  background: radial-gradient(circle, #9d4edd 0%, rgba(18, 20, 23, 0) 47%);
 }
 
 .edge-highlight-1 {
@@ -1004,4 +996,38 @@
     var(--neutral-800) 0%,
     var(--primary-500) 100%
   );
+}
+
+/* FOR TOASER  */
+.toaster .toaster-toast[data-type="error"] {
+  --normal-bg: #fee2e2 !important;
+  --normal-text: #b91c1c !important;
+  --normal-border: #fca5a5 !important;
+  --error-bg: #fee2e2 !important; /* light red */
+  --error-text: #b91c1c !important; /* dark red */
+  --error-border: #fca5a5 !important;
+}
+
+.toaster [data-sonner-toast][data-type="success"] {
+  --success-bg: #dcfce7 !important;
+  --success-text: #166534 !important;
+  --success-border: #86efac !important;
+}
+
+.toaster [data-sonner-toast][data-type="info"] {
+  --info-bg: #e0e7ff !important;
+  --info-text: #1e40af !important;
+  --info-border: #a5b4fc !important;
+}
+
+.toaster [data-sonner-toast][data-type="loading"] {
+  --loading-bg: #fef9c3 !important;
+  --loading-text: #a16207 !important;
+  --loading-border: #fde68a !important;
+}
+
+.toaster [data-sonner-toast][data-type="warning"] {
+  --warning-bg: #fef3c7 !important; /* light orange/yellow */
+  --warning-text: #b45309 !important; /* dark orange */
+  --warning-border: #fcd34d !important;
 }
