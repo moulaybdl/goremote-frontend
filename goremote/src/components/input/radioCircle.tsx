@@ -8,9 +8,10 @@ type radioCircleProps = {
 
 export default function RadioCircle({ checked }: radioCircleProps) {
   const [isChecked, setIsChecked] = useState(checked);
+
   return (
-    <div className="text-primary-400" onClick={() => setIsChecked(!isChecked)}>
-      {!isChecked ? (
+    <div className="text-primary-400" onClick={() => {}}>
+      {!checked ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

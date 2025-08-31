@@ -9,6 +9,7 @@ type CustomButtonProps = {
   style: "filled" | "outlined";
   size: "S" | "M";
   className?: string;
+  onClick?: () => void;
 };
 
 export default function CustomButton({
@@ -17,6 +18,7 @@ export default function CustomButton({
   style,
   size,
   className = "rounded-full",
+  onClick = () => {},
 }: CustomButtonProps) {
   const [classname, setClassName] = useState(className);
 
@@ -57,7 +59,10 @@ export default function CustomButton({
   }, []);
 
   return (
-    <div className={`${classname} w-full cursor-pointer select-none flex justify-center items-center`}>
+    <div
+      className={`${classname} w-full cursor-pointer select-none flex justify-center items-center`}
+      onClick={onClick}
+    >
       {text}
     </div>
   );
