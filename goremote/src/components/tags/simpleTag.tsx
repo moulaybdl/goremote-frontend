@@ -18,7 +18,7 @@ export function AvailabilityTag({ available }: { available: boolean }) {
           available ? "bg-green-500" : "bg-red-500"
         }`}
       ></div>
-      <span className="font-lexend-medium text-[10px]">{available ? "Available" : "Not available"}</span>
+      <span className="text-neutral-200 text-[10px]">{available ? "Available" : "Not available"}</span>
     </div>
   );
 }

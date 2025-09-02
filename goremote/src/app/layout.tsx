@@ -39,7 +39,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${lexend.variable} bg-neutral-800 antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${lexend.variable} bg-[#121416] antialiased`}
       >
         <Toaster />
         <LanguageProvider initialLanguage={initialLanguage}>

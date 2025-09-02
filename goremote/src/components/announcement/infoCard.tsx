@@ -17,9 +17,9 @@ export default function InfoCard({
   price,
 }: ServiceInfoCardProps) {
   return (
-    <div className="w-[281px] h-fit flex justify-center items-center  bg-surface-light   rounded-[14px] relative elevation-2">
-      <div className="w-[101%] h-[101%] absolute bg-red-300 -z-1 rounded-[14px] service-card-border-gradient"></div>
-      <div className="flex flex-col justify-start gap-3 w-full h-full service-card-gradient p-4 rounded-[14px]">
+    <div className="w-[281px] h-fit flex justify-center items-center  bg-neutral-600 border border-neutral-400 rounded-[14px] relative elevation-2">
+      {/* <div className="w-[101%] h-[101%] absolute bg-red-300 -z-1 rounded-[14px] service-card-border-gradient"></div> */}
+      <div className="flex flex-col justify-start gap-5 w-full h-full  p-4 rounded-[14px]">
         {/* freelancer avatar and save button */}
         <div className="flex flex-row justify-between items-center">
           <div className="flex flex-row justify-center items-center gap-4">
@@ -29,10 +29,10 @@ export default function InfoCard({
             </div>
             {/* name and tag */}
             <div className="flex flex-col">
-              <span className="text-[12px] font-lexend-medium text-white">
+              <span className="text-[12px]  text-neutral-100">
                 {name}
               </span>
-              <span className="text-[12px] font-lexend-medium text-secondary">
+              <span className="text-[12px] text-neutral-300">
                 {tag}
               </span>
             </div>
@@ -59,8 +59,8 @@ export default function InfoCard({
         </div>
         {/* post description */}
         <div className="flex flex-col gap-2">
-          <div className="font-lexend-medium text-base">{title}</div>
-          <div className="font-lexend-medium text-sm text-secondary">
+          <div className="text-neutral-100 font-normal text-base">{title}</div>
+          <div className="text-sm font-light text-neutral-200 ">
             {description}
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function InfoCard({
         </div>
         {/* price and submit button */}
         <div className="flex flex-row justify-between">
-          <div className="text-price font-lexend-medium">XXXX$</div>
+          <div className="text-[#A6FF00]">{price}DA</div>
           <LearnMoreButton title={"Learn more"} />
         </div>
       </div>

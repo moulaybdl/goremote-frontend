@@ -72,18 +72,19 @@ export function AppSidebar() {
     <Sidebar
       variant="floating"
       collapsible="icon"
-      className={!open ? "cursor-pointer" : ""}
+      className={`${!open ? "cursor-pointer" : ""} `}
+      
       onClick={() => {
         if (!open) {
           toggleSidebar();
         }
       }}
     >
-      <SidebarHeader className="">
+      <SidebarHeader className="bg-neutral-700 rounded-lg">
         <SidebarMenu>
           <SidebarMenuItem className="">
             <span
-              className={`font-lexend-medium flex ${
+              className={`text-neutral-100 flex ${
                 state === "collapsed" ? "justify-center" : "justify-start "
               }  p-4 text-2xl`}
             >
@@ -92,9 +93,9 @@ export function AppSidebar() {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
-      <SidebarContent className="">
+      <SidebarContent className="bg-neutral-700 ">
         <SidebarGroup>
-          <SidebarGroupLabel className="font-lexend-medium text-sm">
+          <SidebarGroupLabel className="text-neutral-100 text-sm">
             Main
           </SidebarGroupLabel>
           <SidebarGroupContent className="z-1">
@@ -106,16 +107,16 @@ export function AppSidebar() {
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton
                       asChild
-                      className="rounded-full p-4 mb-2"
+                      className="rounded-full p-4 mb-2 hover:bg-[#212529]"
                     >
                       <a
                         href={item.url}
-                        className={`flex ${isActive ? "bg-glow-10" : ""}`}
+                        className={`flex  ${isActive ? "bg-primary-600" : ``}`}
                       >
                         <item.icon
-                          className={`${isActive ? "text-glow" : ""}`}
+                          className={`${isActive ? "text-primary-100" : "text-neutral-300"}`}
                         />
-                        <span className={`${isActive ? "text-glow" : ""}`}>
+                        <span className={`${isActive ? "text-primary-100" : "text-neutral-300"}`}>
                           {item.title}
                         </span>
                       </a>
@@ -127,15 +128,15 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter>
+      <SidebarFooter className="bg-neutral-700 rounded-lg">
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton>
               <a href="#" className="flex justify-center items-center gap-4">
-                <span className=" rotate-180">
+                <span className="text-neutral-300 rotate-180">
                   <LogOut className="w-5 h-5" />
                 </span>
-                <span>Logout</span>
+                <span className="text-neutral-300">Logout</span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>

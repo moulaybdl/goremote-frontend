@@ -4,7 +4,7 @@ import { SidebarTrigger } from "./sidebar";
 
 export default function CustomeSidebar() {
   return (
-    <div className="top-0 left-0 h-screen relative">
+    <div className="top-0 left-0 h-screen relative ">
       <AppSidebar />
     </div>
   );

@@ -40,7 +40,7 @@ export default function CompanyRegisterStep1({
           <div className="font-medium text-3xl text-neutral-100 ">
             Tell us a bit about your company
           </div>
-          <div className="font-normal text-xl text-neutral-300">
+          <div className="font-normal text-xl text-neutral-200">
             Start by telling us about your company !
           </div>
         </div>
