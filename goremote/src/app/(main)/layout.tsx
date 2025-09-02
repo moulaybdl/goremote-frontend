@@ -10,7 +10,7 @@ export default function MainLayout({
 }>) {
   return (
     <SidebarProvider defaultOpen={true}>
-      <main className="flex min-h-screen">
+      <main className="flex w-full min-h-screen">
         <CustomeSidebar />
         <SidebarTrigger className="opacity-60 hover:opacity-100" />
         {children}
