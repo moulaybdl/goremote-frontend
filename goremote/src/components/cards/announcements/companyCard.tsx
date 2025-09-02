@@ -1,7 +1,6 @@
 import Button3 from "@/components/buttons/buttons3";
 import { SimpleTag } from "@/components/tags/simpleTag";
 import { CompanyCardPros } from "@/types/CompanyCard";
-import { FreelancerProfileCardProps } from "@/types/FreelancerCardsProps";
 import { verify } from "crypto";
 import { Verified } from "lucide-react";
 
@@ -13,10 +12,10 @@ export default function CompanyCard({
   phone_number,
 }: CompanyCardPros) {
   return (
-    <div className="w-96 h-fit rounded-3xl bg-surface-dark flex flex-col gap-32 justify-center items-center relative">
-      <div className="freelancer-card-gradient absolute w-[101%] h-[101%] -z-1 rounded-3xl"></div>
-      <div className="bg-[var(--border-dark)] w-full h-56 rounded-3xl flex justify-center items-center relative">
-        <div className="w-28 h-28 aspect-square rounded-full absolute top-[85%] left-[7%] bg-[var(--color-link)]"></div>
+    <div className="w-96 h-fit rounded-3xl bg-neutral-600 border border-neutral-400 flex flex-col gap-32 justify-center items-center relative">
+      {/* <div className="freelancer-card-gradient absolute w-[101%] h-[101%] -z-1 rounded-3xl"></div> */}
+      <div className="bg-neutral-400 w-full h-56 rounded-3xl flex justify-center items-center relative">
+        <div className="w-28 h-28 aspect-square rounded-full absolute top-[85%] left-[7%] bg-neutral-300"></div>
         <div className="absolute top-[100%] left-[40%] flex flex-col gap-4">
           <div className="font-lexend-medium text-xl text-white  flex gap-2 justify-center self-center items-center pt-4">
             {name}
@@ -42,10 +41,10 @@ export default function CompanyCard({
       </div>
       <div className="flex flex-col gap-4 self-start px-10 w-full">
         <div className="flex flex-col gap-3">
-          <div className="font-lexed-medium text-base text-secondary">
+          <div className="font-normal text-base text-neutral-200">
             {email}
           </div>
-          <div className="font-lexed-medium text-base text-secondary">
+          <div className="font-normal text-base text-neutral-200">
             {phone_number}
           </div>
           <div className="w-full px-14 py-4">
