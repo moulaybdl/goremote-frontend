@@ -5,7 +5,7 @@ import { useCallback, useRef, useState } from "react";
 // T represent FormData
 export interface UseFormConfig<T> {
   initialValues?: Partial<T>;
-  // validate?: (values: T) => Partial<T>;
+  validate?: (values: T) => Partial<T>;
   // validators: ((values: T) => Partial<T>)[];
   onSubmit: (values: T) => Promise<void> | void;
 }
