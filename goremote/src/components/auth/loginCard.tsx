@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Button3 from "../buttons/buttons3";
 import InputField2 from "../input/inputField2";
 
@@ -22,8 +23,10 @@ export default function LoginCard() {
         {/* signup */}
         <div className="font-lexend-medium text-secondary pb-10">
           Don't have an account?
-          <span className="font-lexend-medium text-glow">Sign up, </span>It is
-          free!
+          <Link href={"/choose-role"} className="font-lexend-medium text-glow">
+            Sign up,{" "}
+          </Link>
+          It is free!
         </div>
       </div>
     </div>

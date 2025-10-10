@@ -1,0 +1,119 @@
+"use client";
+
+import CompanyCard from "@/components/cards/announcements/companyCard";
+import RatingCard from "@/components/cards/announcements/ratingCard";
+import { Button } from "@/components/ui/button";
+import CustomButton from "@/components/ui/customButton";
+import Navbar from "@/components/ui/navbar";
+import { useState } from "react";
+
+export default function AnnouncementPage() {
+  const [savePost, setSavePost] = useState(false);
+
+  return (
+    <div className="flex flex-col gap-4">
+      {/* navbar */}
+      <div className="w-full">
+        <Navbar />
+      </div>
+      {/* content */}
+      <div className="w-full flex flex-row gap-5 p-10">
+        {/* post details */}
+        <div className="grow flex flex-col gap-6">
+          {/* title */}
+          <div className="text-4xl font-normal text-neutral-100">
+            Announcement Title
+          </div>
+          {/* company info + save card */}
+          <div className="flex justify-between items-center">
+            {/* company name + post date */}
+            <div className="flex flex-col gap-1">
+              <div className="text-sm text-primary-300 font-normal">
+                by GoRemote
+              </div>
+              <div className="text-sm text-neutral-200 font-light">
+                Posted 2 days ago
+              </div>
+            </div>
+            {/* apply button + save button */}
+            <div className="flex flex-row items-center gap-4">
+              {/* apply button */}
+              <div className="">
+                <CustomButton
+                  icon_positions={"none"}
+                  style={"filled"}
+                  size={"S"}
+                  text="Apply"
+                />
+              </div>
+              {/* save button */}
+              <div
+                className=""
+                onClick={() => {
+                  setSavePost(!savePost);
+                }}
+              >
+                {!savePost ? (
+                  <div className="text-neutral-300">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M14.4747 3.25793C15.3551 3.36011 16 4.1192 16 5.00559V17.4L10 14.4L4 17.4V5.00559C4 4.1192 4.64486 3.36011 5.52534 3.25793C6.99325 3.08757 8.4864 3 10 3C11.5136 3 13.0068 3.08757 14.4747 3.25793Z"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                ) : (
+                  <div className="text-neutral-300">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                    >
+                      <path
+                        d="M3 3L4.29395 4.29395M17 17L15.8333 15.8333M11.5674 14.867L10 14.0833L4.16667 17V7.46629M4.29395 4.29395C4.51895 3.73859 5.0229 3.3235 5.64964 3.25076C7.07677 3.08514 8.52844 3 10 3C11.4716 3 12.9232 3.08514 14.3504 3.25076C15.2064 3.35011 15.8333 4.08811 15.8333 4.94988V15.8333M4.29395 4.29395L15.8333 15.8333"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+          {/* details */}
+          <div className="flex flex-col gap-2">
+            <div className="font-medium text-neutral-100 text-xl">Details</div>
+            <div className="font-light text-neutral-200 text-base">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore
+            </div>
+          </div>
+        </div>
+        {/* company cards */}
+        <div className="flex flex-col gap-3">
+          <CompanyCard
+            name={"GoRemote"}
+            label={"Startup"}
+            Verified={true}
+            email={"goremote@gmail.com"}
+            phone_number={"0698946253"}
+          />
+          <RatingCard />
+        </div>
+      </div>
+    </div>
+  );
+}

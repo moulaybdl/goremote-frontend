@@ -1,8 +1,13 @@
+"use client"
+
+import { useRouter } from "next/navigation";
 import Button2 from "../buttons/button2";
 import CompanyIconCard from "./icons/companybg";
 import FreelancerCardIcon from "./icons/freelancerbg";
 
 export default function RoleCard() {
+  const router = useRouter()
+
   return (
     <div className="w-fit h-fit flex justify-center items-center rounded-3xl bg-[#141619] elevation-3 relative">
       <div className="role-card-border-gradient absolute -z-1 h-[101%] w-[101%] rounded-3xl"></div>
@@ -18,7 +23,7 @@ export default function RoleCard() {
         <div className="flex flex-row gap-2 w-full justify-center items-center">
           <div className="flex flex-row justify-center items-center  relative bg-[#141619]">
             <div className=" absolute">
-              <Button2 title="Company" rotationDir="right" />
+              <Button2 title="Company" rotationDir="right" onClick={() => {router.push("/register")}} />
             </div>
             <FreelancerCardIcon />
           </div>
@@ -33,7 +38,7 @@ export default function RoleCard() {
               <path
                 d="M2 0V117"
                 stroke="url(#paint0_linear_547_621)"
-                stroke-width="3"
+                strokeWidth="3"
               />
               <defs>
                 <linearGradient
@@ -44,8 +49,8 @@ export default function RoleCard() {
                   y2="117"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#121417" />
-                  <stop offset="1" stop-color="#A6ACB8" stop-opacity="0.6" />
+                  <stop stopColor="#121417" />
+                  <stop offset="1" stopColor="#A6ACB8" stopOpacity="0.6" />
                 </linearGradient>
               </defs>
             </svg>
@@ -60,7 +65,7 @@ export default function RoleCard() {
               <path
                 d="M2 117V-2.32458e-06"
                 stroke="url(#paint0_linear_547_622)"
-                stroke-width="3"
+                strokeWidth="3"
               />
               <defs>
                 <linearGradient
@@ -71,15 +76,15 @@ export default function RoleCard() {
                   y2="0"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop stop-color="#121417" />
-                  <stop offset="1" stop-color="#A6ACB8" stop-opacity="0.6" />
+                  <stop stopColor="#121417" />
+                  <stop offset="1" stopColor="#A6ACB8" stopOpacity="0.6" />
                 </linearGradient>
               </defs>
             </svg>
           </div>
           <div className="flex flex-row justify-center items-center  relative bg-[#141619]">
             <div className=" absolute">
-              <Button2 title="Freelancer" rotationDir="left" />
+              <Button2 title="Freelancer" rotationDir="left" onClick={() => {router.push("/register")}}/>
             </div>
             <FreelancerCardIcon />
           </div>
