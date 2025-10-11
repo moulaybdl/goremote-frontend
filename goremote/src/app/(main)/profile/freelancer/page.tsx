@@ -6,72 +6,93 @@ import FreelanceServices from "@/components/sections/freelancerProfile/freelance
 import Navbar from "@/components/ui/navbar";
 import { useState } from "react";
 
-const tabs = ["Services", "Portfolio"];
+const PackageIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+    <path d="M2 17l10 5 10-5"/>
+    <path d="M2 12l10 5 10-5"/>
+  </svg>
+);
 
+const FolderIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+  </svg>
+);
+
+
+const tabs = [
+  { name: "Services", icon: PackageIcon },
+  { name: "Portfolio", icon: FolderIcon }
+];
 const tabs_compo = [<FreelanceServices />, <FreelancerPortfolioSection />];
 
 export default function FreelancerProfile() {
   const [profileTabs, setprofileTabs] = useState(tabs);
   const [profileTabSections, setprofileTabSections] = useState(tabs_compo);
   const [activeTab, setActiveTab] = useState(0);
-
   return (
-    <div className="w-full flex flex-col gap-2">
+    <div className="w-full min-h-screen bg-black">
       {/* navbar */}
       <div className="w-full">
         <Navbar />
       </div>
+      
       {/* content */}
-      <div className="flex flex-row gap-4">
+      <div className="flex flex-row gap-8 p-8">
         {/* freelancer card */}
-        <div className="flex flex-row mb-4">
-          {/* Freelancer card */}
-          <div className="">
-            <DetailedFreelancerCard
-              name={"Moulay Bouabelli"}
-              description={"Web developer"}
-              icons={["github"]}
-              experience_level={"Expert"}
-              categories={[
-                {
-                  color: "bg-[#FFC800]",
-                  name: "Web Development",
-                },
-              ]}
-              skills={[
-                {
-                  color: "bg-[#FF3C58]",
-                  name: "React.js",
-                },
-              ]}
-            />
-          </div>
-          {/* tabs section */}
-          <div className=""></div>
+        <div className="flex-shrink-0">
+          <DetailedFreelancerCard
+            name={"Moulay"}
+            description="Web developer"
+            experience_level="Expert"
+            icons={["github"]}
+            categories={[
+              { color: "bg-green-500", name: "Development" },
+              { color: "bg-cyan-400", name: "Design" }
+            ]}
+            skills={[
+              { color: "bg-yellow-500", name: "JavaScript" },
+              { color: "bg-pink-500", name: "React" }
+            ]}
+          />
         </div>
-        {/* tabs */}
-        <div className="w-fullflex flex-col gap-6 p-4">
+
+        {/* tabs section */}
+        <div className="flex-1 flex flex-col ml-10 mt-15">
           {/* tabs */}
-          <div className="flex flex-row gap-5 justify-start">
+          <div className="relative flex flex-row gap-8 border-b border-neutral-800">
             {tabs.map((tab, index) => {
+              const Icon = tab.icon;
               return (
-                <div
-                  className={`select-none cursor-pointer ${
+                <button
+                  key={index}
+                  className={`relative flex items-center gap-2 pb-4 px-2 transition-all duration-300 ease-in-out ${
                     activeTab === index
                       ? "text-primary-500"
-                      : "text-neutral-400"
+                      : "text-neutral-400 hover:text-neutral-300"
                   }`}
-                  key={index}
                   onClick={() => setActiveTab(index)}
                 >
-                  {tab}
-                </div>
+                  <Icon className="w-8 h-8" />
+                  <span className="font-semibold text-xl">{tab.name}</span>
+                  
+                  {/* Active indicator line */}
+                  <div
+                    className={`absolute bottom-0 left-0 right-0 h-0.5 bg-primary-500 transition-all duration-300 ease-in-out ${
+                      activeTab === index ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                </button>
               );
             })}
           </div>
-          {/* displayed section */}
-          <div className="p-4">
-            {profileTabSections && profileTabSections[activeTab]}
+
+          {/* displayed section with smooth transition */}
+          <div className="mt-8 relative">
+            <div className="transition-opacity duration-300 ease-in-out">
+              {tabs_compo[activeTab]}
+            </div>
           </div>
         </div>
       </div>
