@@ -432,6 +432,7 @@ export default function LandingPage() {
         </div>
         {/* features */}
         <div className="flex flex-col gap-5 z-1">
+      
           <div className="flex flex-row gap-4">
             <div className="self-end flex flex-col gap-16">
               {/* header */}
