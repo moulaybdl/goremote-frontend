@@ -79,7 +79,7 @@ export default function FreelanceServices() {
         {/* Plus Button */}
         <button
           onClick={() => setIsOpen(true)}
-          className=" ml-96 group relative px-4 py-2 bg-primary-500 hover:bg-primary-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+          className=" ml-96 group relative px-4 py-2 bg-primary-500 hover:bg-primary-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center"
           aria-label="Create New Service"
         >
           <svg
