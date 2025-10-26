@@ -1,7 +1,4 @@
 
-
-
-// components/dashboard/ProjectsDashboard.tsx
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -137,10 +134,10 @@ function ProjectsDashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-screen w-full text-white p-8 flex items-center justify-center">
+      <div className="min-h-screen w-full text-white p-4 sm:p-6 lg:p-8 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-400 mx-auto mb-4"></div>
-          <p>Loading dashboard...</p>
+          <div className="animate-spin rounded-full h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 border-b-2 border-purple-400 mx-auto mb-3 sm:mb-4"></div>
+          <p className="text-sm sm:text-base">Loading dashboard...</p>
         </div>
       </div>
     );
@@ -148,12 +145,12 @@ function ProjectsDashboard() {
 
   if (error) {
     return (
-      <div className="min-h-screen w-full text-white p-8 flex items-center justify-center">
+      <div className="min-h-screen w-full text-white p-4 sm:p-6 lg:p-8 flex items-center justify-center">
         <div className="text-center text-red-400">
-          <p>{error}</p>
+          <p className="text-sm sm:text-base">{error}</p>
           <button 
             onClick={() => window.location.reload()}
-            className="mt-4 px-4 py-2 bg-purple-600 rounded-lg hover:bg-purple-700 transition-colors"
+            className="mt-3 sm:mt-4 px-3 sm:px-4 py-2 bg-purple-600 rounded-lg hover:bg-purple-700 transition-colors text-sm sm:text-base"
           >
             Retry
           </button>
@@ -169,23 +166,23 @@ function ProjectsDashboard() {
   const { stats, graphData, currentProjects } = dashboardData;
 
   return (
-    <div className="min-h-screen w-full text-white p-4 sm:p-6 lg:p-8 items-center">
-      <div className="mx-auto">
+    <div className="min-h-screen w-full text-white p-4 sm:p-6 lg:p-8">
+      <div className=" mx-auto">
         {/* Header */}
-        <div className="m-10">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-light mb-5 sm:mb-4">Projects dashboard</h1>
-          <p className="text-gray-400 text-sm sm:text-base">track and manage your projects</p>
+        <div className="mb-6 sm:mb-8 lg:mb-12">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3">Projects dashboard</h1>
+          <p className="text-gray-400 text-sm sm:text-base lg:text-lg">track and manage your projects</p>
         </div>
 
         {/* Stats and ProjectGraph Section - 50/50 split */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-14">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-8 sm:mb-12 lg:mb-14">
           {/* 4 Cards Grid - 50% */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
             <InfoCard
               title="Open"
               subtitle="Projects"
               number={stats.openProjects}
-              icon={<Briefcase className="w-6 h-6 sm:w-7 sm:h-7" />}
+              icon={<Briefcase className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />}
               variant="primary"
             />
 
@@ -193,7 +190,7 @@ function ProjectsDashboard() {
               title="total"
               subtitle="Applications"
               number={stats.totalApplications}
-              icon={<FileText className="w-6 h-6 sm:w-7 sm:h-7" />}
+              icon={<FileText className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />}
               variant="purple"
             />
 
@@ -201,7 +198,7 @@ function ProjectsDashboard() {
               title="best"
               subtitle="Matching"
               number={`${stats.bestMatching}%`}
-              icon={<LinkIcon className="w-6 h-6 sm:w-7 sm:h-7" />}
+              icon={<LinkIcon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />}
               variant="yellow"
             />
 
@@ -209,7 +206,7 @@ function ProjectsDashboard() {
               title="Avg"
               subtitle="Applications"
               number={stats.avgApplications}
-              icon={<BarChart3 className="w-6 h-6 sm:w-7 sm:h-7" />}
+              icon={<BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />}
               variant="teal"
             />
           </div>
@@ -222,14 +219,14 @@ function ProjectsDashboard() {
 
         {/* Current Projects Section */}
         <div className="bg-neutral-600 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-gray-600 shadow-lg transition-all">
-          <div className="mb-4 sm:mb-6">
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium mb-4 sm:mb-6 lg:mb-8">Current projects</h2>
-            <p className="text-gray-400 text-sm">
+          <div className="mb-4 sm:mb-6 lg:mb-8">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-3 sm:mb-4 lg:mb-6">Current projects</h2>
+            <p className="text-gray-400 text-sm sm:text-base">
               Showing {currentProjects.length} active projects
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
             {currentProjects.map((project) => (
               <CurrentProjectCard key={project.id} {...project} />
             ))}

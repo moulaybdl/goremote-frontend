@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 
 interface InfoCardProps {
@@ -84,28 +86,28 @@ const InfoCard: React.FC<InfoCardProps> = ({
   const styles = variantStyles[variant];
 
   return (
-    <div className={`${styles.bg} rounded-2xl p-4 sm:p-6 lg:p-8 border ${styles.border} shadow-lg w-full`}>
-      <div className="flex items-start justify-between mb-3 sm:mb-4">
-        <div className="py-1 sm:py-2">
-          <p className={`${styles.titleColor} text-xs sm:text-sm font-medium`}>{title}</p>
-          <p className={`${styles.subtitleColor} text-xl sm:text-2xl lg:text-3xl font-medium mt-1`}>{subtitle}</p>
+    <div className={`${styles.bg} rounded-2xl p-3 sm:p-4 lg:p-6 xl:p-8 border ${styles.border} shadow-lg w-full`}>
+      <div className="flex items-start justify-between mb-2 sm:mb-3 lg:mb-4">
+        <div className="py-0 sm:py-1 lg:py-2">
+          <p className={`${styles.titleColor} text-xs font-medium`}>{title}</p>
+          <p className={`${styles.subtitleColor} text-lg sm:text-xl lg:text-2xl xl:text-3xl font-medium mt-0 sm:mt-1`}>{subtitle}</p>
         </div>
 
         {/* Subtle top-left gradient behind icon */}
         <div
-          className={`p-2 sm:p-3 rounded-xl border ${styles.border} bg-gradient-to-br ${styles.gradient}`}
+          className={`p-1 sm:p-2 lg:p-3 rounded-lg sm:rounded-xl border ${styles.border} bg-gradient-to-br ${styles.gradient}`}
           style={{
             backgroundImage:
               'linear-gradient(to bottom right, rgba(255,255,255,0.25) 10%, transparent 70%)',
           }}
         >
-          <div className={`${styles.iconColor} w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7`}>
+          <div className={`${styles.iconColor} w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7`}>
             {icon}
           </div>
         </div>
       </div>
 
-      <div className={`${styles.numberColor} text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold mt-3 sm:mt-4`}>
+      <div className={`${styles.numberColor} text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-semibold mt-1 sm:mt-2 lg:mt-3 xl:mt-4`}>
         {number}
       </div>
     </div>
