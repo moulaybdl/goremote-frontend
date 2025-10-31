@@ -12,6 +12,8 @@ export type SimpleInputProps = {
   error: string | undefined;
   max_width?: string;
   max_hight?: string; // for textarea
+  className?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 };
 
 export default function SimpleInput({
@@ -24,6 +26,8 @@ export default function SimpleInput({
   error,
   max_width = "max-w-xl",
   max_hight = "max-h-64",
+  className,
+  onChange
 }: SimpleInputProps) {
   const firstName = useRef<HTMLInputElement>(null);
   return (
@@ -33,6 +37,8 @@ export default function SimpleInput({
       </div>
       {long ? (
         <textarea
+          value={value}
+          onChange={onChange}
           className={`appearance-none outline-[var(--primary-500)] p-0 m-0 shadow-none focus:outline-[var(--primary-300)]
          border  bg-neutral-700 ${
            error ? "border-error-300 ourtline-[var(--error-500)]" : "border-neutral-300"
@@ -43,6 +49,8 @@ export default function SimpleInput({
         <input
           type={type}
           name={name}
+          value={value}
+          onChange={onChange}
           ref={ref}
           className={`appearance-none outline-[var(--primary-500)] p-0 m-0 shadow-none focus:outline-[var(--primary-300)]
         border ${

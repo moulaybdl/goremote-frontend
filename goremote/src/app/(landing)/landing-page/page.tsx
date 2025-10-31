@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import CentralNode from "./svgs/central_node.svg";
+import CentralNode from "./svgs/centralNode.svg";
 import Node from "./svgs/node.svg";
 import LandingPageBackground from "./svgs/landingpage_background.svg";
 import { useEffect, useRef, useState } from "react";
@@ -24,6 +24,9 @@ import { Button } from "@/components/ui/button";
 import Button3 from "@/components/buttons/buttons3";
 import ConnectorAnimated from "./svgs/ConnectorAnimated";
 import { html } from "framer-motion/client";
+import DropDown from "@/components/input/dropDown";
+import { text } from "stream/consumers";
+import SimpleInput from "@/components/input/simpleInput";
 
 function randomIndex<T>(arr: T[]): number {
   if (arr.length === 0) throw new Error("Array is empty");
@@ -41,6 +44,12 @@ export default function LandingPage() {
   const node_r_3 = useRef<HTMLImageElement>(null);
   const node_r_4 = useRef<HTMLImageElement>(null);
 
+  // CTA form state
+  const [email, setEmail] = useState("");
+  const [role, setRole] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState("");
+  const [submitError, setSubmitError] = useState("");
 
   // classnames for features card:
   const [portfolioCardClassName, setPortfolioCardClassName] = useState("flex-row w-fit" )
@@ -283,17 +292,64 @@ export default function LandingPage() {
     }, 2000);
   }, []);
 
+  // Handle form submission to Google Sheets
+  const handleSubmitWaitlist = async () => {
+    // Reset messages
+    setSubmitError("");
+    setSubmitMessage("");
+
+    // Validate inputs
+    if (!email || !role) {
+      setSubmitError("Please fill in both email and role");
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setSubmitError("Please enter a valid email address");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/submit-waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, role }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitMessage("Successfully added to waitlist! We'll be in touch soon.");
+        setEmail("");
+        setRole("");
+      } else {
+        setSubmitError(data.error || "Failed to submit. Please try again.");
+      }
+    } catch (error) {
+      setSubmitError("An error occurred. Please try again later.");
+      console.error('Error submitting waitlist:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="flex flex-col gap-16 w-full min-h-screen overflow-x-hidden relative">
       {/* Slogan*/}
       <div className="flex flex-col">
         {/* hero text */}
         <div className="flex flex-col justify-center items-center gap-5 z-1000 mt-44 sm:p-0 px-10 ">
-          <span className="text-6xl  font-medium  text-center text-primary-500">
-            SLOGAN GOES HERE
+          <span className="sm:text-6xl text-4xl  font-medium  text-center text-primary-500">
+            Where Talent Meets Opportunity
           </span>
-          <span className="font-normal text-3xl text-center text-neutralt-50">
-            SLOGAN GOES HERE
+          <span className="font-normal sm:text-3xl text-xl text-center text-neutral-50">
+            Unlock Your Potential
           </span>
           <span className="font-normal text-xl text-center text-neutral-200  w-full max-w-2xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
@@ -546,11 +602,11 @@ export default function LandingPage() {
       {/* CTA */}
       <div className="sm:m-20 m-5 mt-0 mb-0 relative h-screen">
         {/* line */}
-        <div className="h-[3px] w-full px-10 overflow-hidden">
+        <div className="h-[3px] w-full px-10 overflow-hidden ">
           <div className="w-full aspect-square edge-highlight-1 p-5 "></div>
         </div>
         {/* elipse */}
-        <div className="">
+        <div className="sm:block hidden">
           <div className="h-80  w-full p-10 relative flex justify-center items-center overflow-hidden opacity-35 mix-blend-hard-light">
             <div className="w-full aspect-square edge-highlight-2 rounded-full absolute bottom-[5px] "></div>
           </div>
@@ -575,9 +631,54 @@ export default function LandingPage() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore
             </div>
-            <div className="flex flex-wrap  justify-start items-center gap-4">
-              <InputField1 />
-              <Button3 title={"Get Started"} radius="rounded-[9px]" />
+            <div className="flex flex-col justify-start gap-6">
+              <div className="w-full">
+                <SimpleInput 
+                  label="Enter your email:" 
+                  value={email} 
+                  type="email" 
+                  name="email" 
+                  ref={undefined} 
+                  error={submitError && !email ? "Email is required" : undefined}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+              <div className="w-fit">
+                <DropDown 
+                  label="Choose Role:" 
+                  options={[{
+                    id: "company",
+                    text: "I'm a Company"
+                  },
+                  {
+                    id: "freelancer",
+                    text: "I'm a Freelancer"
+                  }]}
+                  placeholder="Role"
+                  onChange={(selectedRole: string) => setRole(selectedRole)}
+                />
+              </div>
+              
+              {/* Success/Error Messages */}
+              {submitMessage && (
+                <div className="text-success-400 text-sm font-medium">
+                  {submitMessage}
+                </div>
+              )}
+              {submitError && (
+                <div className="text-error-400 text-sm font-medium">
+                  {submitError}
+                </div>
+              )}
+              
+              <div className="w-fit">
+                <Button3 
+                  title={isSubmitting ? "Submitting..." : "Get Started"} 
+                  radius="rounded-[9px]"
+                  onClick={handleSubmitWaitlist}
+                  disabled={isSubmitting}
+                />
+              </div>
             </div>
           </motion.div>
           {/* image */}

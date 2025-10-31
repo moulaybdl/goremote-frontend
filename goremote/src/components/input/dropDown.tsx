@@ -8,7 +8,7 @@ export type DropDownProps = {
   placeholder?: string;
   options?: DropDownOptionProps[];
   max_width?: string;
-  onChange?: (value: any) => void;
+  onChange?: (value: string) => void;
 
   // langauge specific:
   t?: any;
@@ -27,7 +27,8 @@ export default function DropDown({
   options = [],
   t,
   isRTL,
-  max_width="max-w-xl"
+  max_width="max-w-xl",
+  onChange
 }: DropDownProps) {
   const [currentItem, setCurrentItem] = useState("");
   const [showList, setShowList] = useState(false);
@@ -72,6 +73,9 @@ export default function DropDown({
                   onClick={() => {
                     setCurrentItem(option.text);
                     setShowList(false);
+                    if (onChange) {
+                      onChange(option.id);
+                    }
                   }}
                 >
                   {option.text}
