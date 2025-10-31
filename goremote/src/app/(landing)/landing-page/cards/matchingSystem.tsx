@@ -3,7 +3,11 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 
-export default function MatchingSystemCard() {
+type Props = {
+  className?: string;
+}
+
+export default function MatchingSystemCard({ className }: Props) {
   const container_variants = {
     initial: {},
     hover: {},
@@ -20,19 +24,19 @@ export default function MatchingSystemCard() {
 
   return (
     <motion.div
-      className="bg-neutral-700 border w-fit h-fit border-neutral-400 hover:border-neutral-300 rounded-[42px]
-    flex flex-row justify-center items-center gap-12 p-7
-    transition-all duration-300 ease-out"
+      className={`bg-neutral-700 border  h-fit border-neutral-400 hover:border-neutral-300 rounded-[42px]
+    flex  justify-center items-center gap-12 p-7
+    transition-all duration-300 ease-out ${className}`}
       variants={container_variants}
       initial="initial"
       whileHover="hover"
     >
       {/* text */}
       <div className="flex flex-col gap-3">
-        <div className="text-2xl font-normal text-neutral-50">
+        <div className="sm:text-2xl text-xl font-normal text-neutral-50">
           Smart matching
         </div>
-        <div className="text-base font-light text-neutral-200 max-w-80">
+        <div className="sm:text-base text-sm font-light text-neutral-200 max-w-80">
           Our matching system considers your project context, company needs, and
           requirements, aligning them with the skills and experience of
           available freelancers to suggest the best-fit team.

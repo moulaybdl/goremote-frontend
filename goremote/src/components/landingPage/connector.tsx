@@ -37,6 +37,7 @@ interface ConnectorProps {
   percentage?: number;
   y_margin?: number;
   color?: string | undefined;
+  className?: string;
 }
 
 const Connector: React.FC<ConnectorProps> = ({
@@ -46,6 +47,7 @@ const Connector: React.FC<ConnectorProps> = ({
   percentage = 0.4,
   y_margin = 0,
   color,
+  className = "",
 }) => {
   const [path, setPath] = useState("");
   const [vertDir, setVertDir] = useState(1);
@@ -123,6 +125,7 @@ const Connector: React.FC<ConnectorProps> = ({
         height: "100%",
         pointerEvents: "none",
       }}
+      className={className}
     >
       <defs>
         <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">

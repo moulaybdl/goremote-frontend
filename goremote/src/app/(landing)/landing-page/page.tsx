@@ -23,6 +23,7 @@ import Button2 from "@/components/buttons/button2";
 import { Button } from "@/components/ui/button";
 import Button3 from "@/components/buttons/buttons3";
 import ConnectorAnimated from "./svgs/ConnectorAnimated";
+import { html } from "framer-motion/client";
 
 function randomIndex<T>(arr: T[]): number {
   if (arr.length === 0) throw new Error("Array is empty");
@@ -39,6 +40,55 @@ export default function LandingPage() {
   const node_r_2 = useRef<HTMLImageElement>(null);
   const node_r_3 = useRef<HTMLImageElement>(null);
   const node_r_4 = useRef<HTMLImageElement>(null);
+
+
+  // classnames for features card:
+  const [portfolioCardClassName, setPortfolioCardClassName] = useState("flex-row w-fit" )
+  const [chatCardClassName, setChatCardClassName] = useState("flex-row w-fit")
+  const [workspaceCardClassName, setWorkspaceCardClassName] = useState("w-fit")
+  const [assistantCardClassName, setAssistantCardClassName] = useState("")
+
+  const handlePortfolioCardClassName = (screenSize: number) => {
+    if (screenSize < 957) {
+      setPortfolioCardClassName("flex-col-reverse w-full")
+    }
+
+
+  }
+
+
+  const handleAssistantCardClassName = (screenSize: number) => {
+    if (screenSize < 957) {
+      setPortfolioCardClassName("flex-col-reverse w-full")
+    }
+
+  }
+
+  const handleChatCardClassName = (screenSize: number) => {
+    if (screenSize < 957) {
+      setChatCardClassName("w-full flex-col-reverse")
+    }
+
+  }
+
+  const handleWorkspaceCardClassName = (screenSize: number) => {
+    if (screenSize < 957) {
+      setWorkspaceCardClassName("w-full")
+    }
+
+  }
+
+  useEffect(() => {
+    const size = innerWidth
+
+    handlePortfolioCardClassName(size);
+    handleAssistantCardClassName(size);
+    handleChatCardClassName(size);
+    handleWorkspaceCardClassName(size);
+
+
+
+  }, [])
 
   const left = [
     {
@@ -238,7 +288,7 @@ export default function LandingPage() {
       {/* Slogan*/}
       <div className="flex flex-col">
         {/* hero text */}
-        <div className="flex flex-col justify-center items-center gap-5 z-1000 mt-44 ">
+        <div className="flex flex-col justify-center items-center gap-5 z-1000 mt-44 sm:p-0 px-10 ">
           <span className="text-6xl  font-medium  text-center text-primary-500">
             SLOGAN GOES HERE
           </span>
@@ -254,8 +304,8 @@ export default function LandingPage() {
           </div>
         </div>
         {/* hero section */}
-        <div className="flex justify-center items-center w-full relative overflow-x-hidden overflow-y-hidden">
-          <div className="landing-page-hero-circle-gradient z-50 w-[115%] h-[115%] rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="flex justify-center items-center w-full relative overflow-x-hidden overflow-y-hidden ">
+          <div className=" landing-page-hero-circle-gradient z-50 lg:w-[120%] lg:h-[120%] w-[130%] h-[130%] rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
           {/* node */}
           <div className="w-full h-screen nodes-container relative z-20 ">
             <div className="node-center  place-self-center  relative">
@@ -266,23 +316,23 @@ export default function LandingPage() {
                 ref={central_node}
               />
             </div>
-            <div className="node-l-2 relative">
+            <div className="node-l-2 relative sm:opacity-100 opacity-0">
               <Image
                 src={Node}
                 alt={""}
-                className="absolute bottom-[-20%] left-[5%]"
+                className="absolute bottom-[-20%] left-[7%] "
                 ref={node_l_1}
               />
             </div>
-            <div className="node-l-3 relative">
+            <div className="node-l-3 relative sm:opacity-100 opacity-0">
               <Image
                 src={Node}
                 alt={""}
-                className="absolute bottom-[20%] left-[40%]"
+                className="absolute bottom-[20%] left-[47%] lg:opacity-100 opacity-0"
                 ref={node_l_2}
               />
             </div>
-            <div className="node-l-4 relative">
+            <div className="node-l-4 relative sm:opacity-100 opacity-0">
               <Image
                 src={Node}
                 alt={""}
@@ -290,31 +340,31 @@ export default function LandingPage() {
                 ref={node_l_3}
               />
             </div>
-            <div className="node-l-5 relative">
+            <div className="node-l-5 relative sm:opacity-100 opacity-0">
               <Image
                 src={Node}
                 alt={""}
-                className="absolute top-0 left-[50%]"
+                className="absolute top-0 left-[60%] lg:opacity-100 opacity-0"
                 ref={node_l_4}
               />
             </div>
-            <div className="node-r-6 relative">
+            <div className="node-r-6 relative sm:opacity-100 opacity-0">
               <Image
                 src={Node}
                 alt={""}
-                className="absolute top-0 right-[40%]"
+                className="absolute top-0 right-[40%] lg:opacity-100 opacity-0"
                 ref={node_r_1}
               />
             </div>
-            <div className="node-r-7 relative">
+            <div className="node-r-7 relative sm:opacity-100 opacity-0">
               <Image
                 src={Node}
                 alt={""}
-                className="absolute top-[20%] right-[-10%]"
+                className="absolute top-[20%] right-[10%] "
                 ref={node_r_2}
               />
             </div>
-            <div className="node-r-8 relative">
+            <div className="node-r-8 relative lg:opacity-100 opacity-0">
               <Image
                 src={Node}
                 alt={""}
@@ -322,7 +372,7 @@ export default function LandingPage() {
                 ref={node_r_3}
               />
             </div>
-            <div className="node-r-9 relative">
+            <div className="node-r-9 relative sm:opacity-100 opacity-0">
               <Image
                 src={Node}
                 alt={""}
@@ -342,7 +392,7 @@ export default function LandingPage() {
         </div>
       </div>
       {/* connections */}
-      <div className="absolute w-full h-full">
+      <div className="absolute w-full h-full sm:opacity-100 opacity-0">
         <Connector
           startRef={node_l_1}
           endRef={central_node}
@@ -350,6 +400,7 @@ export default function LandingPage() {
           percentage={0.6}
           y_margin={-40}
           color="#41D1FF"
+          className=""
         />
         <Connector
           startRef={node_l_2}
@@ -358,6 +409,7 @@ export default function LandingPage() {
           percentage={0.3}
           y_margin={-5}
           color="#41D1FF"
+          className="lg:opacity-100 opacity-0"
         />
         <Connector
           startRef={node_l_3}
@@ -374,6 +426,7 @@ export default function LandingPage() {
           percentage={0.4}
           y_margin={60}
           color="#FF1A00"
+          className="lg:opacity-100 opacity-0"
         />
         <Connector
           startRef={node_r_1}
@@ -382,6 +435,7 @@ export default function LandingPage() {
           percentage={0.4}
           y_margin={60}
           color="#FF1A00"
+          className="lg:opacity-100 opacity-0"
         />
         <Connector
           startRef={node_r_2}
@@ -390,6 +444,7 @@ export default function LandingPage() {
           percentage={0.4}
           y_margin={30}
           color="#41D1FF"
+          className=""
         />
         <Connector
           startRef={node_r_3}
@@ -398,6 +453,7 @@ export default function LandingPage() {
           percentage={0.2}
           y_margin={-10}
           color="#41D1FF"
+          className="lg:opacity-100 opacity-0"
         />
         <Connector
           startRef={node_r_4}
@@ -409,19 +465,10 @@ export default function LandingPage() {
         />
       </div>
       {/* animated pulse */}
-      {currentElement}
-      {/* <ConnectorAnimated
-        startRef={node_r_1}
-        endRef={central_node}
-        radius={50}
-        percentage={0.4}
-        y_margin={60}
-        color="#FF1A00"
-      /> */}
-      {}
+      {/* {currentElement} */}
       {/* Features */}
       <motion.div
-        className="flex flex-col gap-10 justify-center items-center m-20 relative "
+        className="flex flex-col gap-10 justify-center items-center sm:m-20 m-10 relative "
         ref={features_section_container_ref}
         variants={features_section_container}
         initial="initial"
@@ -433,7 +480,7 @@ export default function LandingPage() {
         {/* features */}
         <div className="flex flex-col gap-5 z-1">
       
-          <div className="flex flex-row gap-4">
+          <div className="flex md:flex-row flex-col gap-4">
             <div className="self-end flex flex-col gap-16">
               {/* header */}
               <motion.div
@@ -459,7 +506,7 @@ export default function LandingPage() {
                 variants={portfolio_card}
                 transition={{ duration: 0.8 }}
               >
-                <DreamPortfolioCard />
+                <DreamPortfolioCard className={portfolioCardClassName} />
               </motion.div>
             </div>
             {/* assitant card */}
@@ -468,11 +515,11 @@ export default function LandingPage() {
               variants={assistant_card}
               transition={{ duration: 0.8 }}
             >
-              <AssistantCard />
+              <AssistantCard className={assistantCardClassName} />
             </motion.div>
           </div>
           <motion.div
-            className="flex flex-row gap-4"
+            className="flex md:flex-row flex-col gap-4"
             variants={bottom_container}
             initial="initial"
             whileInView="inView"
@@ -483,7 +530,7 @@ export default function LandingPage() {
               variants={workspace_card}
               transition={{ duration: 0.8 }}
             >
-              <FeatureWorkspaceCard />
+              <FeatureWorkspaceCard className={workspaceCardClassName} />
             </motion.div>
             {/* header + workspace card */}
             <motion.div
@@ -491,17 +538,18 @@ export default function LandingPage() {
               variants={chat_card}
               transition={{ duration: 0.8 }}
             >
-              <MatchingSystemCard />
+              <MatchingSystemCard className={chatCardClassName} />
             </motion.div>
           </motion.div>
         </div>
       </motion.div>
       {/* CTA */}
-      <div className="m-20 mt-0 mb-0 relative h-screen">
+      <div className="sm:m-20 m-5 mt-0 mb-0 relative h-screen">
         {/* line */}
         <div className="h-[3px] w-full px-10 overflow-hidden">
           <div className="w-full aspect-square edge-highlight-1 p-5 "></div>
         </div>
+        {/* elipse */}
         <div className="">
           <div className="h-80  w-full p-10 relative flex justify-center items-center overflow-hidden opacity-35 mix-blend-hard-light">
             <div className="w-full aspect-square edge-highlight-2 rounded-full absolute bottom-[5px] "></div>
@@ -509,14 +557,14 @@ export default function LandingPage() {
         </div>
         {/* content */}
         <motion.div
-          className="flex flex-row gap-48 mb-20 absolute top-[100px] px-10"
+          className="flex flex-row gap-48 mb-20 absolute top-[100px] sm:px-10 px-4"
           variants={cta_container}
           initial="initial"
           whileInView="inView"
         >
           {/* headeline */}
           <motion.div
-            className="flex flex-col gap-10 "
+            className="flex flex-col justify-start gap-10 "
             variants={cta_left}
             transition={{ duration: 0.8 }}
           >
@@ -527,14 +575,14 @@ export default function LandingPage() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore
             </div>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap  justify-start items-center gap-4">
               <InputField1 />
               <Button3 title={"Get Started"} radius="rounded-[9px]" />
             </div>
           </motion.div>
           {/* image */}
           <motion.div
-            className="bg-neutral-600 border w-fit h-fit border-neutral-400 rounded-[42px] rotate-15"
+            className="bg-neutral-600 border w-fit h-fit border-neutral-400 rounded-[42px] rotate-15 xl:block hidden"
             variants={cta_right}
             transition={{ duration: 0.8 }}
           >
@@ -543,7 +591,6 @@ export default function LandingPage() {
         </motion.div>
       </div>
 
-      {/* CTA 2 */}
     </div>
   );
 }

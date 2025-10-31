@@ -5,7 +5,11 @@ import { use, useState } from "react";
 
 import { motion } from "framer-motion";
 
-export default function FeatureWorkspaceCard() {
+type Props = {
+  className?: string;
+}
+
+export default function FeatureWorkspaceCard({ className }: Props) {
   const [imageStyle, setImageStyle] = useState("");
   const [cursor1Style, setCursor1Style] = useState("");
 
@@ -64,10 +68,10 @@ export default function FeatureWorkspaceCard() {
 
   return (
     <motion.div
-      className="bg-neutral-700 border border-neutral-400 hover:border-neutral-300 w-fit h-fit rounded-[42px]
+      className={`bg-neutral-700 border border-neutral-400 hover:border-neutral-300 w-fit h-fit rounded-[42px]
     flex flex-col justify-center items-center
     relative
-    transition-all duration-300 ease-out"
+    transition-all duration-300 ease-out ${className}`}
       variants={container_variants}
       initial={"initial"}
       whileHover={"hover"}
@@ -78,10 +82,10 @@ export default function FeatureWorkspaceCard() {
       </motion.div>
       {/* text */}
       <div className="flex flex-col max-w-[442px] p-5 pt-0">
-        <div className="text-2xl font-normal text-neutral-50">
+        <div className="sm:text-2xl text-xl font-normal text-neutral-50">
           Perfect Workspace
         </div>
-        <div className="text-base font-light text-neutral-200">
+        <div className="sm:text-base text-sm font-light text-neutral-200">
           Our website provides a dedicated workspace to streamline collaboration
           with your teammates.
         </div>

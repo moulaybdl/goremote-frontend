@@ -4,7 +4,11 @@ import Background_Dark from "@/app/(landing)/landing-page/svgs/portfolio_dark.sv
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function DreamPortfolioCard() {
+type Props = {
+  className?: string;
+}
+
+export default function DreamPortfolioCard({ className }: Props) {
   const container_variants = {
     initial: {},
     hover: {},
@@ -30,19 +34,19 @@ export default function DreamPortfolioCard() {
 
   return (
     <motion.div
-      className="bg-neutral-700 border w-fit h-fit border-neutral-400 hover:border-neutral-300 rounded-[42px]
-    flex flex-row justify-center items-center gap-5 p-7
-    transition-all duration-300 ease-out"
+      className={`bg-neutral-700 border  h-fit border-neutral-400 hover:border-neutral-300 rounded-[42px]
+    flex  ${className} justify-center items-center gap-5 p-7
+    transition-all duration-300 ease-out`}
       variants={container_variants}
       initial="initial"
       whileHover="hover"
     >
       {/* text */}
       <div className="flex flex-col gap-3">
-        <div className="text-2xl font-normal text-neutral-50">
+        <div className="sm:text-2xl text-xl font-normal text-neutral-50">
           Dream Portfolio
         </div>
-        <div className="text-base font-light text-neutral-200 max-w-3xs">
+        <div className="sm:text-base text-sm font-light text-neutral-200 max-w-3xs">
           Our website lets you create a portfolio to showcase your skills and
           attract potential clients.
         </div>

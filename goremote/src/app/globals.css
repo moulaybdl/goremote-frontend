@@ -926,6 +926,13 @@
   grid-row-gap: 0px;
 }
 
+/* @media (max-width: 640px) {
+  .nodes-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+} */
+
 .node-center {
   grid-area: 1 / 2 / 5 / 3;
 }
