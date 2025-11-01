@@ -352,6 +352,8 @@ export default function LandingPage() {
             Unlock Your Potential
           </span>
           <span className="font-normal text-xl text-center text-neutral-200  w-full max-w-2xl">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua
           </span>
           <div className="">
             <Button3 title="Get Started" radius="rounded-full" />
@@ -626,6 +628,8 @@ export default function LandingPage() {
               Happy Freelancers, Satisfied Companies
             </div>
             <div className="text-xl font-light text-neutral-300">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore
             </div>
             <div className="flex flex-col justify-start gap-6">
               <div className="w-full">
