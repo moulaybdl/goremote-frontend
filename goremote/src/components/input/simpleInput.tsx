@@ -9,6 +9,7 @@ export type SimpleInputProps = {
   long?: boolean;
   name: string;
   ref: any;
+  placeholder?: string;
   error: string | undefined;
   max_width?: string;
   max_hight?: string; // for textarea
@@ -24,6 +25,7 @@ export default function SimpleInput({
   name,
   ref,
   error,
+  placeholder,
   max_width = "max-w-xl",
   max_hight = "max-h-64",
   className,
@@ -50,6 +52,7 @@ export default function SimpleInput({
           type={type}
           name={name}
           value={value}
+          placeholder={placeholder}
           onChange={onChange}
           ref={ref}
           className={`appearance-none outline-[var(--primary-500)] p-0 m-0 shadow-none focus:outline-[var(--primary-300)]

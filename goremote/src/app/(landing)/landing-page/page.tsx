@@ -647,6 +647,7 @@ export default function LandingPage() {
                   value={email} 
                   type="email" 
                   name="email" 
+                  placeholder="Enter your email"
                   ref={undefined} 
                   error={submitError && !email ? "Email is required" : undefined}
                   onChange={(e) => setEmail(e.target.value)}
@@ -683,7 +684,7 @@ export default function LandingPage() {
               <div className="w-fit">
                 <Button3 
                   title={isSubmitting ? "Submitting..." : "Get Started"} 
-                  radius="rounded-[9px]"
+                  radius="rounded-full"
                   onClick={handleSubmitWaitlist}
                   disabled={isSubmitting}
                 />
