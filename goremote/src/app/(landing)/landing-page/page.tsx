@@ -44,6 +44,9 @@ export default function LandingPage() {
   const node_r_3 = useRef<HTMLImageElement>(null);
   const node_r_4 = useRef<HTMLImageElement>(null);
 
+  // CTA section ref for scrolling
+  const ctaSectionRef = useRef<HTMLDivElement>(null);
+
   // CTA form state
   const [email, setEmail] = useState("");
   const [role, setRole] = useState("");
@@ -292,6 +295,14 @@ export default function LandingPage() {
     }, 2000);
   }, []);
 
+  // Scroll to CTA section
+  const scrollToCTA = () => {
+    ctaSectionRef.current?.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
+
   // Handle form submission to Google Sheets
   const handleSubmitWaitlist = async () => {
     // Reset messages
@@ -356,7 +367,7 @@ export default function LandingPage() {
             eiusmod tempor incididunt ut labore et dolore magna aliqua
           </span>
           <div className="">
-            <Button3 title="Get Started" radius="rounded-full" />
+            <Button3 title="Get Started" radius="rounded-full" onClick={scrollToCTA} />
           </div>
         </div>
         {/* hero section */}
@@ -600,7 +611,7 @@ export default function LandingPage() {
         </div>
       </motion.div>
       {/* CTA */}
-      <div className="sm:m-20 m-5 mt-0 mb-0 relative h-screen">
+      <div ref={ctaSectionRef} className="sm:m-20 m-5 mt-0 mb-0 relative h-screen">
         {/* line */}
         <div className="h-[3px] w-full px-10 overflow-hidden ">
           <div className="w-full aspect-square edge-highlight-1 p-5 "></div>
